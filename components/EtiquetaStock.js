@@ -21,9 +21,9 @@ const EtiquetaStock = ({orden}) => {
       try {
 
          await axios.post(`/api/eliminarstock/${id}`)
-          toast.success('🏠')
+          toast.success(`etiqueta ${id} Eliminada`)
           setTimeout(() =>{
-            router.push('/stock-terminado')
+            router.push('/etiqueta-stock')
         },1000)
       } catch (error) {
           console.log(error)

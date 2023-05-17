@@ -58,7 +58,7 @@ export default function Home() {
       <div className='mt-auto'>
         <input value={buscar} onChange={buscador} type="text" placeholder='Buscar' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
       </div>
-      <div className='grid gap-4 grid-cols-1 md:grid-cols-1 2xl:grid-cols-1'>  
+      <div className='grid gap-4 grid-cols-1 md:grid-cols-2 2xl:grid-cols-1'>  
         {results.map(orden=>(
           <EtiquetaStock key={orden.id} orden={orden}/>
         ))}
