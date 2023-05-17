@@ -52,7 +52,7 @@ export default function Home() {
     <AdminLayout pagina={`Inicio - Producto`}>
     
       {/* <h1 className='text-4xl font-black'>{faenaActual?.nombre}</h1> */}
-      <p className='text-2xl mx-5 my-3'>
+      <p className='text-2xl mx-5 my-3 py-0'>
         Etiquetas
       </p>
       <div className='mt-auto'>
