@@ -383,7 +383,7 @@ export default function InformeAgr() {
                                 <div style={{ width: '40%', margin: 'auto' }}>
                                     <CircularProgressbar
                                         styles={buildStyles({
-                                            pathColor: graficodesp <= 4 ? '#22c55e' : '#DC2626',
+                                            pathColor: graficodesp > 4.0 ?'#22c55e' : '#DC2626',
                                             trailColor: '#F5F5F5',
                                             textColor: '#0a0a0a',
                                         })}
@@ -440,7 +440,7 @@ export default function InformeAgr() {
                         <div className="bg-white p-4 rounded-md shadow">
                             <div className=''>
                                 <h2 className="text-lg text-center font-semibold">Stacker</h2>
-                                <div className='p-2 m-auto items-center'>
+                                <div className='p-2 m-auto items-center hidden sm:block'>
                                 <Bar className='' data={dataemp} />
                                 </div>
 
@@ -470,7 +470,7 @@ export default function InformeAgr() {
                         <div className="bg-white p-4 rounded-md shadow">
                             <div className=''>
                                 <h2 className="text-lg text-center font-semibold">Secado</h2>
-                                <div className='p-2 m-auto items-center'>
+                                <div className='p-2 m-auto items-center hidden sm:block'>
                                 <Bar className='' data={dataseco} />
                                 </div>
 
