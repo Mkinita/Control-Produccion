@@ -14,13 +14,13 @@ const ListadoProduccion = ({producciones}) => {
 
     <>
         
-        <div className="grid gap-1 grid-cols-5 md:grid-cols-5 2xl:grid-cols-5 text-center uppercase font-bold text-sm">
+        <div className="grid gap-1 grid-cols-5 md:grid-cols-5 2xl:grid-cols-5 text-center uppercase font-bold text-sm hover:bg-lime-300">
 
-          <div className="border">{fechaFormateada}</div>
-          <div className="border">{ingreso}</div>
-          <div className="border">{ingreso01}</div>
-          <div className="border">{volumen}</div>
-          <div className="border">{suma}</div>
+          <div className="border border-lime-400">{fechaFormateada}</div>
+          <div className="border border-lime-400">{ingreso}</div>
+          <div className="border border-lime-400">{ingreso01}</div>
+          <div className="border border-lime-400">{volumen}</div>
+          <div className="border border-lime-400">{suma}</div>
                 
         </div>
     </>

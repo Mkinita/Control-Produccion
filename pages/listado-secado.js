@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import {formatoNumero} from "helpers/formato";
 import { Bar } from 'react-chartjs-2';
 import  ProduccionesEncabezado from '../components/ProduccionesEncabezado'
+import  ProduccionesEncabezadodos from '../components/ProduccionesEncabezadodos'
 
 
 
@@ -112,12 +113,7 @@ export default function AdminProducciones() {
 
       <div className={`${isVisibleproveedor ? 'hidden' : ''}`}>
         <div className={`${cuadro ? 'hidden' : ''}`}>
-          <div className="grid gap-1 grid-cols-3 md:grid-cols-4 2xl:grid-cols-4 text-center uppercase font-bold text-sm">
-            <div>Fecha</div>
-            <div className="hidden md:block">Ingreso</div>
-            <div>Produccion</div>
-            <div className="">%</div>
-          </div>
+        <ProduccionesEncabezadodos/>
 
           {data && data.length ? results.map(producciones =>
             <Produccion

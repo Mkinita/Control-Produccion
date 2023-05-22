@@ -1,6 +1,5 @@
 import Head from "next/head"
 import Sidebar from "../components/Sidebar"
-import Pasos from "../components/Pasos"
 import Modal from "react-modal"
 import { ToastContainer } from'react-toastify'
 import ModalEquipo from "../components/ModalEquipo";

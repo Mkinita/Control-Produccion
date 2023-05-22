@@ -2,10 +2,13 @@ import {formatiarFecha} from "helpers/fecha"
 import {formatoNumero} from "helpers/formato"
 import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
+import { format, parseISO } from 'date-fns';
 
 const ListadoProduccion = ({producciones}) => {
     const {id, volumen, fecha, nombre,ingreso} = producciones
 
+    const fechaS = typeof fecha === 'string' ? parseISO(fecha) : fecha;
+    const fechaFormateada = format(fechaS, 'MMMM dd');
     
 
     
@@ -13,15 +16,19 @@ const ListadoProduccion = ({producciones}) => {
   return (
 
     <>
-        
-        <div className="grid gap-1 grid-cols-3 md:grid-cols-4 2xl:grid-cols-3 text-center uppercase font-bold text-sm">
-
-          <div className="border">{fecha}</div>
-          <div className="border hidden md:block">{ingreso}</div>
-          <div className="border">{volumen}</div>
-          <div className="border">{formatoNumero(volumen / ingreso * 100)}%</div>
+        <table className="table-auto w-full text-center bg-white text-gray-700">
+            <tbody>
                 
-        </div>
+                    <tr className="bg-white border-b hover:bg-lime-300 text-sm">
+                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{fechaFormateada}</td>
+                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{ingreso}</td>
+                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{volumen}</td>
+                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{formatoNumero(volumen / ingreso * 100)}%</td>
+                        
+                    </tr>
+                
+            </tbody>
+        </table>
     </>
   )
 }

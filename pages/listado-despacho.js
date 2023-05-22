@@ -93,11 +93,11 @@ export default function AdminProducciones() {
 
      
         <div class="grid gap-1 grid-cols-5 md:grid-cols-5 2xl:grid-cols-5 text-center uppercase font-bold text-sm">
-        <div class="px-1 md:px-2 py-2">Fecha</div>
-        <div class="px-1 md:px-2 py-2">Seco</div>
-        <div class="px-1 md:px-2 py-2">Verde</div>
-        <div class="px-1 md:px-2 py-2">Servicio</div>
-        <div class="px-1 md:px-2 py-2">Total</div>
+        <div class="px-1 md:px-2 py-2 border border-lime-400">Fecha</div>
+        <div class="px-1 md:px-2 py-2 border border-lime-400">Seco</div>
+        <div class="px-1 md:px-2 py-2 border border-lime-400">Verde</div>
+        <div class="px-1 md:px-2 py-2 border border-lime-400">Servicio</div>
+        <div class="px-1 md:px-2 py-2 border border-lime-400">Total</div>
         </div>
 
 
