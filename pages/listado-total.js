@@ -227,7 +227,7 @@ export default function InformeAgr() {
    return (
         <>
             <LayoutInformeAgr pagina='Informe-agr'>
-                <Head>
+            <Head>
                     <meta name="description" content="Carlos Jerez" />
                     <link rel="icon" href="/CJ.png" />
                     <title>Control Produccion AGR</title>
@@ -249,7 +249,7 @@ export default function InformeAgr() {
                         </div>
                         </div>
                     </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                         <div className="bg-white p-4 rounded-md shadow">
                             <div className='flex items-center'>
                                 <h2 className="text-lg font-semibold text-right ml-6">Aserradero</h2>
@@ -328,6 +328,65 @@ export default function InformeAgr() {
                                                 <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalVolumenscla)} m³</td> 
                                                 <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalVolumenscla / TOTAL * TOTAL_)} m³</td>  
                                             </tr>
+                                        </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+
+                        {/* //Despacho// */}
+
+                        <div className="bg-white p-4 rounded-md shadow">
+                            <div className='flex items-center'>
+                                <h2 className="text-lg font-semibold text-right ml-6">Despacho</h2>
+                                <div style={{ width: '40%', margin: 'auto' }}>
+                                    <CircularProgressbar
+                                        styles={buildStyles({
+                                            pathColor: graficodesp < 4.0 ?'#22c55e' : '#DC2626',
+                                            trailColor: '#F5F5F5',
+                                            textColor: '#0a0a0a',
+                                        })}
+                                        value={100}
+                                        text={`${formatoNumero1(graficodesp)} Cargas`}
+                                    />
+
+
+                                </div>
+                            </div>
+                            <div className='flex justify-center'>     
+                                <div className="overflow-x-auto py-2 text-xs font-bold">
+                                    <div className="min-w-full">
+                                        <table className="table-auto">
+                                        <tbody>
+
+                                            <tr>
+                                                <td className="border border-lime-200 px-1 py-2"></td>
+                                                <td className="border border-lime-200 px-1 py-2">Seco</td>
+                                                <td className="border border-lime-200 px-1 py-2">Verde</td>   
+                                                <td className="border border-lime-200 px-1 py-2">Servicio</td>   
+                                                <td className="border border-lime-200 px-1 py-2">Total</td>   
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td className="border border-lime-200 px-1 py-2">Real</td>
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresodesp)} m³</td> 
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngreso01desp)} m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalVolumensdesp)} m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(total_despacho)} m³</td>  
+                                            </tr>
+                                            <tr>
+                                                <td className="border border-lime-200 px-1 py-2">Proyeccion</td>
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresodesp / TOTAL * TOTAL_)} m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngreso01desp / TOTAL * TOTAL_)} m³</td> 
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalVolumensdesp/ TOTAL * TOTAL_)} m³</td> 
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(total_despacho / TOTAL * TOTAL_)} m³</td>   
+                                            </tr>
+
+                                            
+
+                                            
+
                                             
                                         </tbody>
                                         </table>
@@ -336,10 +395,12 @@ export default function InformeAgr() {
                             </div>  
                         </div>
 
+                        {/* ///// */}
+
                         <div className="bg-white p-4 rounded-md shadow">
                             <div className=''>
                                 <h2 className="text-lg text-center font-semibold">Stacker</h2>
-                                <div className='p-2 m-auto items-center'>
+                                <div className='p-2 m-auto items-center hidden sm:block'>
                                 <Bar className='' data={dataemp} />
                                 </div>
 
@@ -369,7 +430,7 @@ export default function InformeAgr() {
                         <div className="bg-white p-4 rounded-md shadow">
                             <div className=''>
                                 <h2 className="text-lg text-center font-semibold">Secado</h2>
-                                <div className='p-2 m-auto items-center'>
+                                <div className='p-2 m-auto items-center hidden sm:block'>
                                 <Bar className='' data={dataseco} />
                                 </div>
 
@@ -407,8 +468,14 @@ export default function InformeAgr() {
                         
                     </div>
                     
+                    
                 </div>
 
+                <div className='py-8 pb-5 m-auto text-center'>
+                    <Link href="/informes-agr" class="border border-lime-400 px-2 p-2">
+                        <span class="">🏠 Inicio</span>
+                    </Link>
+                </div>
                 
                 
                 

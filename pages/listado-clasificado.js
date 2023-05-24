@@ -64,6 +64,7 @@ export default function AdminProducciones() {
   const resproceso = totalVolumens * 0.015
   const despunte = totalVolumens * 0.02
   const humedo = totalVolumens * 0.01
+  const rzo = totalVolumens * 0.012
   const totaltotal = totalVolumens + resproceso + despunte + humedo
   const [currentMonth, setCurrentMonth] = useState('');
 
@@ -156,6 +157,10 @@ export default function AdminProducciones() {
                 <tr class="border-b border-gray-200 hover:bg-lime-300">
                   <td class="py-3 px-4 text-left whitespace-nowrap">Humedo</td>
                   <td class="py-3 px-4 text-right">{formatoNumero(humedo)}</td>
+                </tr>
+                <tr class="border-b border-gray-200 hover:bg-lime-300">
+                  <td class="py-3 px-4 text-left whitespace-nowrap">Rechazo</td>
+                  <td class="py-3 px-4 text-right">{formatoNumero(rzo)}</td>
                 </tr>
                 <tr class="bg-lime-400 text-black uppercase text-sm leading-normal">
                   <td class="py-3 px-4 font-bold">Total</td>
