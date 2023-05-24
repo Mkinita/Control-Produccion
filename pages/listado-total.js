@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import useSWR from 'swr'
-import LayoutInformeAgr from "../layout/LayoutInformeAgr"
+import LayoutIndicadores from "../layout/LayoutIndicadores"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useCallback, useState } from "react"
@@ -266,7 +266,7 @@ export default function InformeAgr() {
 
    return (
         <>
-            <LayoutInformeAgr pagina='Informe-agr'>
+            <LayoutIndicadores pagina='Informe-agr'>
                 <Head>
                     <meta name="description" content="Carlos Jerez" />
                     <link rel="icon" href="/CJ.png" />
@@ -522,7 +522,7 @@ export default function InformeAgr() {
                 
                 
             
-            </LayoutInformeAgr>
+            </LayoutIndicadores>
         
         </>
         
