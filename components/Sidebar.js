@@ -305,6 +305,14 @@ const Sidebar = () => {
                         </Link>  
                     </li>
 
+
+                    <li>
+                        <Link href="/imprecion-etiqueta-asr" class="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+                            🎫
+                            <span class="ml-3">Etiquetas</span>
+                        </Link>
+                    </li>
+
                     
 
 

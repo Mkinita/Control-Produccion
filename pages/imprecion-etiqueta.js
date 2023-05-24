@@ -12,22 +12,10 @@ export default function OrdenCompra() {
     const fetcher = () => axios('/api/ordenes').then(datos => datos.data)
     const { data, error, isLoading } = useSWR('/api/ordenes',fetcher,{refreshInterval: 100} )
 
-
-
-   
-
-
-
-    
-
-
    return (
         <ImprecionLayout pagina='Produccion'>
             
             <p className="text-2xl"></p>
-
-
-
             {data && data.length ? data.map(orden =>
                 
                 <EtiquetaImprecion
@@ -36,18 +24,6 @@ export default function OrdenCompra() {
                 />
 
                 ):<p> Sin Etiquetas Pendientes</p>}
-
-
-
-                
-
-
-                
-
-
-                
-            
-
         </ImprecionLayout>
    )
 }
