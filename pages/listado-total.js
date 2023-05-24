@@ -4,7 +4,7 @@ import LayoutInformeAgr from "../layout/LayoutInformeAgr"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useCallback, useState } from "react"
-import {formatoNumero} from "helpers/formato";
+import {formatoNumero,formatoNumero1} from "helpers/formato";
 import Produccion from '../components/Produccion'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import "react-circular-progressbar/dist/styles.css"
@@ -22,8 +22,8 @@ export default function InformeAgr() {
         setCurrentMonth(monthNames[date.getMonth()]);
     }, []);
 
-    const fetcher = () => axios('/api/producion-aserradero').then(datos => datos.data)
-    const { data, error, isLoading } = useSWR('/api/producion-aserradero',fetcher,{refreshInterval: 100} )
+    const fetcherAsr = () => axios('/api/producion-aserradero').then(datos => datos.data)
+    const { data:dataAsr, error:errorAsr, isLoading:isLoadingAsr } = useSWR('/api/producion-aserradero',fetcherAsr,{refreshInterval: 100} )
 
     const [data1, setData1] = useState([]);
       useEffect(() => {
@@ -78,6 +78,46 @@ export default function InformeAgr() {
     const proyeccioncla = totalIngresocla !== 0 ? (totalVolumenscla / totalIngresocla) * 100 : 0;
 
 
+
+    const fetcherDesp = () => axios('/api/produccion-despacho').then(datos => datos.data)
+    const { data:dataDesp, error:errorDesp, isLoading:isLoadingDesp } = useSWR('/api/produccion-despacho',fetcherDesp,{refreshInterval: 100} )
+
+    const [data7, setData7] = useState([]);
+      useEffect(() => {
+        async function fetchData7() {
+        const response7 = await fetch('/api/produccion-despacho');
+        const data7 = await response7.json();
+        setData7(data7);
+      }
+  
+      fetchData7();
+    }, []);
+
+
+    let totalVolumensdesp = 0;
+    let totalIngresodesp = 0;
+    let totalIngreso01desp = 0;
+
+    data7.forEach((produccioness) => {
+        totalVolumensdesp += parseFloat(produccioness.volumen);
+        totalIngresodesp += parseFloat(produccioness.ingreso);
+        totalIngreso01desp += parseFloat(produccioness.ingreso01);
+        
+    });
+
+
+    const total_despacho = (totalIngresodesp + totalVolumensdesp + totalIngreso01desp)
+
+    const graficodesp = (totalIngresodesp + totalVolumensdesp + totalIngreso01desp) / 50
+    
+
+
+    
+    
+    
+    
+    
+    
     const fetcherEmpalillado = () => axios('/api/produccion-empalillado').then(datos => datos.data)
     const { data: dataEmpalillado, error: errorEmpalillado, isLoading: isLoadingEmpalillado } = useSWR('/api/produccion-empalillado',fetcherEmpalillado,{refreshInterval: 100} )
 
@@ -207,39 +247,6 @@ export default function InformeAgr() {
 
 
 
-        const fetcherDesp = () => axios('/api/produccion-despacho').then(datos => datos.data)
-    const { data:dataDesp, error:errorDesp, isLoading:isLoadingDesp } = useSWR('/api/produccion-despacho',fetcherDesp,{refreshInterval: 100} )
-
-    const [data7, setData7] = useState([]);
-      useEffect(() => {
-        async function fetchData7() {
-        const response7 = await fetch('/api/produccion-despacho');
-        const data7 = await response7.json();
-        setData7(data7);
-      }
-  
-      fetchData7();
-    }, []);
-
-
-    let totalVolumensdesp = 0;
-    let totalIngresodesp = 0;
-    let totalIngreso01desp = 0;
-
-    data7.forEach((produccioness) => {
-        totalVolumensdesp += parseFloat(produccioness.volumen);
-        totalIngresodesp += parseFloat(produccioness.ingreso);
-        totalIngreso01desp += parseFloat(produccioness.ingreso01);
-        
-    });
-
-
-    const total_despacho = (totalIngresodesp + totalVolumensdesp + totalIngreso01desp)
-
-    const graficodesp = (totalIngresodesp + totalVolumensdesp + totalIngreso01desp) / 50
-
-
-
         
         
 
@@ -260,7 +267,7 @@ export default function InformeAgr() {
    return (
         <>
             <LayoutInformeAgr pagina='Informe-agr'>
-            <Head>
+                <Head>
                     <meta name="description" content="Carlos Jerez" />
                     <link rel="icon" href="/CJ.png" />
                     <title>Control Produccion AGR</title>
@@ -509,6 +516,8 @@ export default function InformeAgr() {
                         <span class="">🏠 Inicio</span>
                     </Link>
                 </div>
+            
+
                 
                 
                 
@@ -520,5 +529,3 @@ export default function InformeAgr() {
    )
 }
 
-
-            
