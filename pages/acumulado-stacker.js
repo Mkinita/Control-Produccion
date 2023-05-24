@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import axios from 'axios'
-import Layout from "../layout/Layout"
+import LayoutEmp from "../layout/LayoutEmp"
 import Produccion from '../components/Produccion'
 import React, { useState, useEffect } from 'react';
 import {formatoNumero} from "helpers/formato";
@@ -65,7 +65,7 @@ export default function AdminProducciones() {
 
 
   return(
-    <Layout pagina={'Listado-OC'}>
+    <LayoutEmp pagina={'Listado-OC'}>
       <p className="text-2xl my-10"></p>
       <div className='flex flex-col items-center justify-center'>
         <h2 className="text-2xl font-black text-center">Stacker</h2>
@@ -101,6 +101,6 @@ export default function AdminProducciones() {
 
         
  
-    </Layout>
+    </LayoutEmp>
   ) 
 }

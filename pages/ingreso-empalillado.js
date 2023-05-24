@@ -1,4 +1,4 @@
-import Layout from "../layout/Layout"
+import LayoutEmp from "../layout/LayoutEmp"
 import { useEffect, useCallback, useState } from "react"
 import useCombustible from "../hooks/useCombustible"
 
@@ -43,7 +43,7 @@ export default function Saldo() {
 
    return (
         
-    <Layout pagina='Saldos'>
+    <LayoutEmp pagina='Saldos'>
 
             <h1 className="text-2xl font-black text-center">Empalillado</h1>
             <p className="text-2xl my-10"></p>
@@ -189,7 +189,7 @@ export default function Saldo() {
 
             
 
-        </Layout>
+        </LayoutEmp>
         
         
    )

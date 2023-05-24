@@ -1,4 +1,4 @@
-import Layout from "../layout/Layout"
+import LayoutSeco from "../layout/LayoutSeco"
 import { useEffect, useCallback, useState } from "react"
 import useCombustible from "../hooks/useCombustible"
 
@@ -39,7 +39,7 @@ export default function Saldo() {
 
    return (
         
-    <Layout pagina='Saldos'>
+    <LayoutSeco pagina='Saldos'>
 
         <h1 className="text-2xl font-black text-center">Camaras</h1>
         <p className="text-2xl my-10"></p>
@@ -173,7 +173,7 @@ export default function Saldo() {
 
             
 
-        </Layout>
+        </LayoutSeco>
         
         
    )

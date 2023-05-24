@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import axios from 'axios'
-import Layout from "../layout/Layout"
+import LayoutEmp from "../layout/LayoutEmp"
 import EmpalilladoActual from '../components/EmpalilladoActual'
 import Tabla from '@/components/Tabla'
 import React, { useState, useEffect } from 'react';
@@ -82,7 +82,7 @@ function calcularVolumen() {
   
 
     return(
-    <Layout pagina={'Listado-OC'}>
+    <LayoutEmp pagina={'Listado-OC'}>
           <h1 className="text-3xl font-black text-center">Produccion Actual</h1>
             <p className='py-2 text-center'>Fecha: {new Date().toLocaleDateString('es-ES', { day: 'numeric', month: 'numeric', year: 'numeric' })}</p>
             <div className='flex justify-center items-center w-1/2 m-auto gap-2 border border-solid border-amber-400 hover:scale-95 rounded-xl'>
@@ -118,7 +118,7 @@ function calcularVolumen() {
             }
 
  
-    </Layout>
+    </LayoutEmp>
 
         
     )

@@ -1,12 +1,10 @@
 import useSWR from 'swr'
 import axios from 'axios'
-import Layout from "../layout/Layout"
+import LayoutAsr from "../layout/LayoutAsr"
 import Produccion from '../components/Produccion'
 import React, { useState, useEffect } from 'react';
 import {formatoNumero} from "helpers/formato";
-import { Bar } from 'react-chartjs-2';
-import Link from 'next/link'
-import  ProduccionesEncabezado from '../components/ProduccionesEncabezado'
+
 
 
 
@@ -65,7 +63,7 @@ export default function AdminProducciones() {
 
 
   return(
-    <Layout pagina={'Listado-OC'}>
+    <LayoutAsr pagina={'Listado-OC'}>
       
 
       <p className="text-2xl my-10"></p>
@@ -100,6 +98,6 @@ export default function AdminProducciones() {
 
 
  
-    </Layout>
+    </LayoutAsr>
   ) 
 }

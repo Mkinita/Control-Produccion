@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import axios from 'axios'
-import Layout from "../layout/Layout"
+import LayoutEmp from "../layout/LayoutEmp"
 import ListadoFechaEmp from '../components/ListadoFechaEmp'
 import Tabla from '@/components/Tabla'
 import {useState, useEffect} from 'react'
@@ -78,7 +78,7 @@ export default function AdminProducciones() {
   }
 
     return(
-        <Layout pagina={'Produccion-fecha'}>
+        <LayoutEmp pagina={'Produccion-fecha'}>
 
             <h1 className="text-xl font-black text-center">BUSCAR PRODUCCION POR FECHA</h1>
             <p className="text-2xl my-10"></p>
@@ -102,7 +102,7 @@ export default function AdminProducciones() {
             }
 
 
-        </Layout>
+        </LayoutEmp>
 
         
     )

@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import axios from 'axios'
-import Layout from "../layout/Layout"
+import LayoutSeco from "../layout/LayoutSeco"
 import CamarasSecado from '../components/CamarasSecado'
 import React, { useState, useEffect } from 'react';
 import {formatoNumero} from "helpers/formato";
@@ -85,7 +85,7 @@ function calcularVolumen() {
   
 
     return(
-    <Layout pagina={'Listado-OC'}>
+    <LayoutSeco pagina={'Listado-OC'}>
           <h1 className="text-3xl font-black text-center">Dentro Camaras</h1>
             <p className='py-2 text-center'>Fecha: {new Date().toLocaleDateString('es-ES', { day: 'numeric', month: 'numeric', year: 'numeric' })}</p>
             <div className='flex justify-center items-center gap-2 '>
@@ -199,7 +199,7 @@ function calcularVolumen() {
                 
             
  
-    </Layout>
+    </LayoutSeco>
 
         
     )
