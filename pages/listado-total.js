@@ -207,6 +207,39 @@ export default function InformeAgr() {
 
 
 
+        const fetcherDesp = () => axios('/api/produccion-despacho').then(datos => datos.data)
+    const { data:dataDesp, error:errorDesp, isLoading:isLoadingDesp } = useSWR('/api/produccion-despacho',fetcherDesp,{refreshInterval: 100} )
+
+    const [data7, setData7] = useState([]);
+      useEffect(() => {
+        async function fetchData7() {
+        const response7 = await fetch('/api/produccion-despacho');
+        const data7 = await response7.json();
+        setData7(data7);
+      }
+  
+      fetchData7();
+    }, []);
+
+
+    let totalVolumensdesp = 0;
+    let totalIngresodesp = 0;
+    let totalIngreso01desp = 0;
+
+    data7.forEach((produccioness) => {
+        totalVolumensdesp += parseFloat(produccioness.volumen);
+        totalIngresodesp += parseFloat(produccioness.ingreso);
+        totalIngreso01desp += parseFloat(produccioness.ingreso01);
+        
+    });
+
+
+    const total_despacho = (totalIngresodesp + totalVolumensdesp + totalIngreso01desp)
+
+    const graficodesp = (totalIngresodesp + totalVolumensdesp + totalIngreso01desp) / 50
+
+
+
         
         
 
