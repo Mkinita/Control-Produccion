@@ -44,6 +44,14 @@ const Sidebar = () => {
                                         <span class="ml-3">Dentro Camaras</span>
                                     </Link>
                                 </li>
+
+                                <li>
+                                    <Link href="/cargas-secado" class="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+                                        📦
+                                    <span class="ml-3">Cargas {currentMonth}</span>
+                                </Link>  
+                                </li>
+                                
                                 <li>
                                     <Link href="/acumulado-secado" class="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                                         📅

@@ -6,6 +6,7 @@ import TablaTerminado from '@/components/TablaTerminado'
 import * as XLSX from 'xlsx';
 import {useState, useEffect} from 'react'
 import {formatoNumero} from "helpers/formato";
+import Head from 'next/head'
 
 export default function AdminProducciones() {
 
@@ -128,6 +129,13 @@ export default function AdminProducciones() {
 
     return(
         <AdminLayout pagina={'Produccion-fecha'}>
+          <Head>
+            <meta name="description" content="Carlos Jerez" />
+            <link rel="icon" href="/CJ.png" />
+            <title>Control Produccion AGR</title>
+            <meta property="og:image" content="/CJ.png" />
+            <meta name="twitter:image" content="/CJ.png" />
+          </Head>
 
             <h1 className="text-3xl font-black text-center">Stock Terminado</h1>
             <p className="text-2xl my-10"></p>

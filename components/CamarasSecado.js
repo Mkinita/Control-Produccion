@@ -21,7 +21,7 @@ const ListadoProduccion = ({seco}) => {
          await axios.post(`/api/secado/${id}`)
           toast.success('🏠')
           setTimeout(() =>{
-            router.push('/')
+            router.push('/ingreso-camaras')
         },1000)
       } catch (error) {
         console.log(error)
