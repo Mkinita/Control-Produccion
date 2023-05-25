@@ -5,6 +5,7 @@ import StockTerminado from '../components/StockTerminado'
 import TablaTerminado from '@/components/TablaTerminado'
 import * as XLSX from 'xlsx';
 import {useState, useEffect} from 'react'
+import {formatoNumero} from "helpers/formato";
 
 export default function AdminProducciones() {
 
@@ -85,6 +86,42 @@ export default function AdminProducciones() {
     }, [])
 
 
+    const [totalVolumen, setTotalVolumen] = useState(0);
+    const [totalCantidad, setTotalCantidad] = useState(0);
+
+
+
+
+    const sumarVolumenes = () => {
+        let suma = 0;
+        results.forEach((satock) => {
+          satock.pedido.forEach((oc) => {
+            suma += oc.espesor * oc.ancho * oc.largo * oc.piezas * oc.cantidad / 1000000;
+          });
+        });
+      setTotalVolumen(suma);
+      };
+    
+    
+      const sumarCantidades = () => {
+        let suma = 0;
+        results.forEach((satock) => {
+          satock.pedido.forEach((oc) => {
+            suma += oc.cantidad;
+          });
+        });
+      setTotalCantidad(suma);
+      };
+    
+    
+    
+    
+    function calcularVolumen() {
+      sumarVolumenes();
+      sumarCantidades();
+    }
+
+
 
 
     
@@ -94,6 +131,11 @@ export default function AdminProducciones() {
 
             <h1 className="text-3xl font-black text-center">Stock Terminado</h1>
             <p className="text-2xl my-10"></p>
+            <div className='flex justify-center items-center  m-auto gap-2 border border-solid border-lime-400 hover:scale-95 rounded-xl'>
+              <button className="py-2 px-4 text-black" onClick={calcularVolumen}>Resumen</button>
+              <p className="">{formatoNumero(totalVolumen)} m³</p>
+              <p className="">Cantidad {formatoNumero(totalCantidad)}</p>
+            </div>
             <div className='mt-auto'>
                 <input value={search} onChange={searcher} type="text" placeholder='Buscar Por Fecha' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
             </div>
