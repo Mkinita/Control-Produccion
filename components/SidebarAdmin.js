@@ -238,6 +238,18 @@ export const SidebarAdmin = () => {
                 🚚
                   <span class="ml-3">Despacho</span>
             </Link>
+            
+
+              
+           </li>
+
+
+           <li>
+           <Link href="/etiqueta-saldo-control" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
+                ❌
+                  <span class="ml-3">Control Reprocesos</span>
+            </Link>
+            
 
               
            </li>
