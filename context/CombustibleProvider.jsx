@@ -379,7 +379,7 @@ const CombustibleProvider = ({children}) => {
             toast.success('Agregando ⏳')
 
             setTimeout(() =>{
-                router.push('/aserradero-actual')
+                router.push('/imprecion-etiqueta-asr')
             },2000)
 
         } catch (error) {

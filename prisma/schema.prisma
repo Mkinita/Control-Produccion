@@ -130,7 +130,7 @@ model Asr {
   largo String
   piezas String
   calidad String
-  cantidad String
+  cantidad String 
   fecha DateTime
   estado Boolean  @default(false)
 }

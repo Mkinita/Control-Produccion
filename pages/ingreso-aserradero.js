@@ -19,6 +19,9 @@ export default function Saldo() {
     } = useCombustible()
 
 
+    
+
+
     const comprobarPedido = useCallback(() => {
         return piezas === "" || piezas.length <1;
         
@@ -65,9 +68,9 @@ export default function Saldo() {
                             <option value="37">1.5'</option>
                             <option value="45">2'</option>
                             <option value="18">18</option>
-                            <option value="24">24</option>
+                            <option value="24.0">24</option>
                             <option value="32">32</option>
-                            <option value="37">37</option>
+                            <option value="37.0">37</option>
                             <option value="45.0">45</option>
                             <option value="54">54</option>
                             <option value="85">85</option>
@@ -139,7 +142,7 @@ export default function Saldo() {
                         >
                             <option value="">-</option>
                             <option value="Lateral">Lateral</option>
-                            <option value="Centarl">Centarl</option>
+                            <option value="Centarl">Central</option>
                         </select>
                     </div>
 

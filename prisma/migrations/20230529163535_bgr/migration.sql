@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `asr` MODIFY `cantidad` VARCHAR(191) NOT NULL DEFAULT '1';

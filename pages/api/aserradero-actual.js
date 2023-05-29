@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   // Obtener emps
   const asrs = await prisma.asr.findMany({
     where: {
-      estado: false,
+      
       AND: [
         {
           fecha: {

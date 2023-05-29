@@ -108,7 +108,7 @@ export default function InformeAgr() {
 
     const total_despacho = (totalIngresodesp + totalVolumensdesp + totalIngreso01desp)
 
-    const graficodesp = (totalIngresodesp + totalVolumensdesp + totalIngreso01desp) / 50
+    
     
 
 
@@ -244,6 +244,12 @@ export default function InformeAgr() {
        
         const TOTAL_ = horasmes;
         const TOTAL = horstrabajo;
+
+
+
+        const diastotalestrabajados = (TOTAL / 9)
+
+        const graficodesp = (totalIngresodesp + totalVolumensdesp + totalIngreso01desp)/ diastotalestrabajados / 50
 
 
 
