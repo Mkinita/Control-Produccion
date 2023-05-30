@@ -45,31 +45,21 @@ export default function Saldo() {
         
     <LayoutEmp pagina='Saldos'>
 
-            <h1 className="text-2xl font-black text-center">Empalillado</h1>
+            <h1 className="text-2xl font-black text-center">Stacker</h1>
             <p className="text-2xl my-10"></p>
 
-            <div class="container mx-auto">
+            
 
                 <form 
                     onSubmit={colocarEmpalilado}
                     class="text-center"
                 >
 
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr className="text-xs">
-                                <th>Espesor</th>
-                                <th>Ancho</th>
-                                <th>Largo</th>
-                                <th>Corridas</th>
-                                <th>Calidad</th>
-                                <th>Cantidad</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>
+                    
+                    <div class="grid grid-cols-3 gap-2 py-5">
+
+                                <div>
+                                <label for="espesor" class="block text-xs font-medium text-gray-700 mb-1">Espesor</label>
                                 <input
                                     id="espesor"
                                     type="number"
@@ -77,11 +67,12 @@ export default function Saldo() {
                                     value={espesor}
                                     onChange={e => setEspesor(e.target.value)}
                                 />
-                                </td>
+                                </div>
 
 
 
-                                <td>
+                                <div>
+                                <label for="espesor" class="block text-xs font-medium text-gray-700 mb-1">Ancho</label>
                                     <select
                                         id="ancho"
                                         className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
@@ -90,9 +81,10 @@ export default function Saldo() {
                                     >
                                         <option value="">-</option>
                                         <option value="1000">AV</option>
+                                        <option value="86">86</option>
                                         <option value="125">125</option>
                                     </select>
-                                </td>
+                                </div>
 
 
 
@@ -100,7 +92,8 @@ export default function Saldo() {
                                
 
 
-                                <td>
+                                <div>
+                                    <label for="espesor" class="block text-xs font-medium text-gray-700 mb-1">Largo</label>
                                     <select
                                         id="largo"
                                         className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
@@ -116,12 +109,13 @@ export default function Saldo() {
                                         <option value="3.96">13</option>
                                         <option value="4.00">4</option>
                                     </select>
-                                </td>
+                                </div>
 
 
 
 
-                                <td>
+                                <div>
+                                <label for="espesor" class="block text-xs font-medium text-gray-700 mb-1">Piezas/Corridas</label>
                                 <input
                                     id="piezas"
                                     type="number"
@@ -129,8 +123,9 @@ export default function Saldo() {
                                     value={piezas}
                                     onChange={e => setPiezas(e.target.value)}
                                 />
-                                </td>
-                                <td>
+                                </div>
+                                <div>
+                                <label for="espesor" class="block text-xs font-medium text-gray-700 mb-1">Calidad</label>
                                     <select
                                         id="calidad"
                                         className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
@@ -143,10 +138,11 @@ export default function Saldo() {
                                         <option value="Ind">Ind</option>
                                         <option value="Srv">Srv</option>
                                     </select>
-                                </td>
+                                </div>
 
 
-                                <td>
+                                <div>
+                                <label for="espesor" class="block text-xs font-medium text-gray-700 mb-1">Cantidad</label>
                                 <input
                                     id="cantidad"
                                     type="number"
@@ -154,18 +150,16 @@ export default function Saldo() {
                                     value={cantidad}
                                     onChange={e => setCantidad(e.target.value)}
                                 />
-                                </td>
+                                </div>
                             
 
 
                                 
-                            </tr>
-                            </tbody>
-                        </table>
+                            
+                    
+
+
                     </div>
-
-
-
 
                     
 
@@ -185,7 +179,7 @@ export default function Saldo() {
                     
                 </form>
                 
-            </div>
+            
 
             
 

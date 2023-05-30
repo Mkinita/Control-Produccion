@@ -48,42 +48,33 @@ export default function Saldo() {
             <h1 className="text-2xl font-black text-center">Ingresar Saldos</h1>
             <p className="text-2xl my-10"></p>
 
-            <div class="container mx-auto">
+            
+            
 
                 <form 
                     onSubmit={colocarSaldo}
                     class="text-center"
                 >
-
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr className="text-xs">
-                                <th>Espesor</th>
-                                <th>Ancho</th>
-                                <th>Largo</th>
-                                <th>Corridas</th>
-                                <th>Calidad</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>
+                   <div class="grid grid-cols-3 gap-2 py-5"> 
+                    
+                                <div>
+                                <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Espesor</label>    
                                 <input
                                     id="espesor"
                                     type="number"
-                                    className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md"
+                                    className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
                                     value={espesor}
                                     onChange={e => setEspesor(e.target.value)}
                                 />
-                                </td>
+                                </div>
 
 
 
-                                <td>
+                                <div>
+                                    <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Ancho</label>
                                     <select
                                         id="ancho"
-                                        className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md"
+                                        className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
                                         value={ancho}
                                         onChange={e => setAncho(e.target.value)}
                                     >
@@ -96,29 +87,21 @@ export default function Saldo() {
                                         <option value="195">8</option>
                                         <option value="245">10</option>
                                         <option value="295">12</option>
-                                        <option value="1000">1000</option>
+                                        <option value="1000">AV</option>
                                     </select>
-                                </td>
+                                </div>
 
 
 
 
-                                {/* <td>
-                                <input
-                                    id="largo"
-                                    type="number"
-                                    className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md"
-                                    value={largo}
-                                    onChange={e => setLargo(e.target.value)}
-                                />
-                                </td> */}
 
 
 
-                                <td>
+                                <div>
+                                    <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Largo</label>
                                     <select
                                         id="largo"
-                                        className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md"
+                                        className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
                                         value={largo}
                                         onChange={e => setLargo(e.target.value)}
                                     >
@@ -131,24 +114,26 @@ export default function Saldo() {
                                         <option value="3.96">13</option>
                                         <option value="4.00">4</option>
                                     </select>
-                                </td>
+                                </div> 
 
 
 
 
-                                <td>
-                                <input
-                                    id="piezas"
-                                    type="number"
-                                    className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md"
-                                    value={piezas}
-                                    onChange={e => setPiezas(e.target.value)}
-                                />
-                                </td>
-                                <td>
+                                <div>
+                                    <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Pz/Crds</label>
+                                    <input
+                                        id="piezas"
+                                        type="number"
+                                        className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
+                                        value={piezas}
+                                        onChange={e => setPiezas(e.target.value)}
+                                    />
+                                </div>
+                                <div>
+                                    <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Calidad</label>
                                     <select
                                         id="calidad"
-                                        className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md"
+                                        className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
                                         value={calidad}
                                         onChange={e => setCalidad(e.target.value)}
                                     >
@@ -156,16 +141,19 @@ export default function Saldo() {
                                         <option value="Col">Col</option>
                                         <option value="Rema">Rema</option>
                                         <option value="Ind">Ind</option>
-                                        <option value="Dpt">Dpt</option>
-                                        <option value="Dpt">Rep</option>
+                                        <option value="Despunte">Despunte</option>
+                                        <option value="Reproceso">Reproceso</option>
+                                        <option value="Humedo">Humedo</option>
+                                        <option value="Rechazo">Rechazo</option>
                                     </select>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                                </div>
+                            <div>
+                    
+
+                            </div>
 
 
+                            <div></div>
 
 
                     
@@ -176,17 +164,18 @@ export default function Saldo() {
                             
                         <input
                             type="submit"
-                            className= {`${comprobarPedido() ? 'bg-indigo-100' : 'bg-indigo-600 hover:bg-indigo-800'} w-full lg:w-auto px-5 py-2 rounded uppercase font-bold text-white text-center`}
+                            className= {`${comprobarPedido() ? 'bg-indigo-100' : 'bg-indigo-600 hover:bg-indigo-800'} w-full lg:w-auto px-2 py-2 rounded uppercase font-bold text-white text-center`}
                             value="Ingresar"
                             disabled={comprobarPedido()}
                                 
                         />
                     </div>
             
-                    
+                 </div> 
+                   
                 </form>
                 
-            </div>
+            
 
             
 
@@ -195,3 +184,5 @@ export default function Saldo() {
         
    )
 }
+
+
