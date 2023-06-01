@@ -138,7 +138,8 @@ export default function AdminProducciones() {
           <table class="w-full table-auto bg-lime-5">
             <thead>
               <tr class="bg-lime-400 text-black uppercase text-sm leading-normal">
-                <th class="py-6 px-4 font-bold text-center" colspan="2">Clasificado {currentMonth}</th>
+                <th class="py-6 px-4 font-bold text-center" colspan="2">Clasificado Mayo</th>
+                {/* <th class="py-6 px-4 font-bold text-center" colspan="2">Clasificado {currentMonth}</th> */}
               </tr>
             </thead>
             <tbody class="text-black text-sm font-light">
