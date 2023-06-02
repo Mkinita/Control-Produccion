@@ -75,9 +75,8 @@ export default function AdminProducciones() {
      
           <div className="grid  grid-cols-3 md:grid-cols-3 2xl:grid-cols-3 text-center uppercase font-bold text-sm">
             <div>Fecha</div>
-            <div>DESEM.</div>
             <div className="">EMP.</div>
-            
+            <div>DESEM.</div>
             
           </div>
 
