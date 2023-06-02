@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import axios from 'axios'
 import LayoutEmp from "../layout/LayoutEmp"
-import Produccion from '../components/Produccion'
+import ProduccionStacker from '../components/ProduccionStacker'
 import React, { useState, useEffect } from 'react';
 import {formatoNumero} from "helpers/formato";
 
@@ -73,26 +73,25 @@ export default function AdminProducciones() {
       </div>
 
      
-          <div className="grid gap-1 grid-cols-3 md:grid-cols-4 2xl:grid-cols-4 text-center uppercase font-bold text-sm">
+          <div className="grid  grid-cols-3 md:grid-cols-3 2xl:grid-cols-3 text-center uppercase font-bold text-sm">
             <div>Fecha</div>
-            <div className="hidden md:block">Ingreso</div>
-            <div>Produccion</div>
-            <div className="">%</div>
+            <div className="">EMP.</div>
+            <div>DESEM.</div>
+            
           </div>
 
           {data && data.length ? results.map(producciones =>
-            <Produccion
+            <ProduccionStacker
               key={producciones.id}
               producciones={producciones} 
             />
             ):
             <p className='text-center m-10'>Sin Produccion</p>
           }
-          <div className="grid gap-1 grid-cols-3 md:grid-cols-4 2xl:grid-cols-4 text-center uppercase font-bold text-sm py-2">
+          <div className="grid gap-1 grid-cols-3 md:grid-cols-3 2xl:grid-cols-3 text-center uppercase font-bold text-sm py-2">
             <div>Total</div>
-            <div className="hidden md:block">{formatoNumero(totalIngreso)}</div>
+            <div className="">{formatoNumero(totalIngreso)}</div>
             <div>{formatoNumero(totalVolumens)}</div>
-            <div className="">{formatoNumero(totalVolumens / totalIngreso * 100)}%</div>
           </div>
         
       
