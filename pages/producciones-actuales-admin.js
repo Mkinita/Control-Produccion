@@ -162,12 +162,19 @@ export default function InformeAgr() {
                         <p className=''></p>
                     }
                         
-                    <div className='grid gap-2 grid-cols-1 md:grid-cols-3 2xl:grid-cols-3'>  
+                    <div className='grid gap-2 grid-cols-1 md:grid-cols-4 2xl:grid-cols-4'>  
                         <div className="border border-solid border-lime-500">
                             <p className="text-center uppercase font-bold text-xl">Aserradero</p>
                             <p className="text-center text-lg">{formatoNumero(totalVolumen02)} m³</p>
                             <p className="text-center text-sm">{formatoNumero(totalVolumen02 / 9)} m³ / Horas </p>
                         </div>
+
+                        <div className="border border-solid border-lime-500">
+                        <p className="text-center uppercase font-bold text-xl">Partidoras</p>
+                            <p className="text-center text-lg"> m³</p>
+                            <p className="text-center text-sm"> m³ / Horas </p>
+                        </div>
+
                         <div className="border border-solid border-lime-500">
                         <p className="text-center uppercase font-bold text-xl">Stacker</p>
                             <p className="text-center text-lg">{formatoNumero(totalVolumen01)} m³</p>
@@ -178,6 +185,8 @@ export default function InformeAgr() {
                             <p className="text-center text-lg">{formatoNumero(totalVolumen)} m³</p>
                             <p className="text-center text-sm">{formatoNumero(totalVolumen / 9)} m³ / Horas </p>
                         </div>
+
+                        
                     </div>
                 </div>
             

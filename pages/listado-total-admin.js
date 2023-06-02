@@ -287,8 +287,8 @@ export default function InformeAgr() {
                 
                 <div className="bg-gray-200 p-4 rounded-lg shadow-lg">
                     <div className="flex items-center justify-between mb-4">
-                        {/* <h2 className="text-lg font-semibold">Indicadores {currentMonth}</h2> */}
-                        <h2 className="text-lg font-semibold">Indicadores Mayo</h2>
+                        <h2 className="text-lg font-semibold">Indicadores {currentMonth}</h2>
+                        
                         <div className="flex space-x-4">
                         <div className="flex items-center">
                             <span className="bg-green-500 rounded-full w-4 h-4 mr-2"></span>

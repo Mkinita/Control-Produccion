@@ -67,8 +67,8 @@ const Sidebar = () => {
                                 <li>
                                     <Link href="/acumulado" class="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                                         📅
-                                        {/* <span class="ml-3">Acumulado {currentMonth}</span> */}
-                                        <span class="ml-3">Acumulado Mayo</span>
+                                        <span class="ml-3">Acumulado {currentMonth}</span>
+                                        
                                     </Link>
                                 </li>
 

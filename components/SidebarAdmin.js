@@ -33,6 +33,7 @@ export const SidebarAdmin = () => {
 
 
 
+
     return (
       <div class="px-3 py-4 overflow-y-auto rounded bg-white">
         <ul class="space-y-2">
@@ -52,35 +53,48 @@ export const SidebarAdmin = () => {
                 {isVisible3 && (
             <div className="p-2 space-y-1">
 
-            <li>
-               <Link href="/listado-producciones" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
-                  📃
-                  <span class="ml-3">Produccion Actual Clasificado</span>
-               </Link>
-            </li>
+                <li>
+                    <Link href="/aserradero-actual" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
+                        📃
+                        <span class="ml-3">Aserradero</span>
+                    </Link>
+                </li>
 
-            <li>
-               <Link href="/empalillado-actual" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
-                  📃
-                  <span class="ml-3">Produccion Actual Stacker</span>
-               </Link>
-            </li>
+                <li>
+                    <Link href="/aserradero-actual" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
+                        📃
+                        <span class="ml-3">Partidoras</span>
+                    </Link>
+                </li>
+
+                <li>
+                    <Link href="/empalillado-actual" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
+                        📃
+                        <span class="ml-3">Stacker</span>
+                    </Link>
+                </li>
+
+                <li>
+                    <Link href="/dentro-camaras" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
+                        📃
+                        <span class="ml-3">Camaras De Secado</span>
+                    </Link>
+                </li>
+
+                <li>
+                    <Link href="/listado-producciones" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
+                        📃
+                        <span class="ml-3">Clasificado</span>
+                    </Link>
+                </li>
+
+            
 
 
-            <li>
-               <Link href="/aserradero-actual" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
-                  📃
-                  <span class="ml-3">Produccion Actual aserradero</span>
-               </Link>
-            </li>
+            
 
 
-            <li>
-               <Link href="/dentro-camaras" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
-                  📃
-                  <span class="ml-3">Dentro De Camaras</span>
-               </Link>
-            </li>
+            
            
             </div>
             
@@ -221,10 +235,7 @@ export const SidebarAdmin = () => {
             <div className="p-2 space-y-1">
 
            <li>
-           {/* <Link href="/stock" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
-                  📝
-                  <span class="ml-3">Control Stock</span>
-              </Link> */}
+           
 
               
            </li>
@@ -307,13 +318,15 @@ export const SidebarAdmin = () => {
             
                 {isVisible4 && (
             <div className="p-2 space-y-1">
-
+            
             <li>
               <Link href="/listado-total-admin" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
                   📊
                   <span class="ml-3">Indicadores</span>
               </Link>
            </li>
+            
+
 
            <li>
                 <Link href="/producciones-actuales-admin" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
