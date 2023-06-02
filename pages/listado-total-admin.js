@@ -140,7 +140,7 @@ export default function InformeAgr() {
 
     data3.forEach((produccionesss) => {
         totalVolumensemp += parseFloat(produccionesss.volumen);
-        totalIngresoemp += parseFloat(produccionesss.ingreso);
+        totalIngresoemp += parseFloat(produccionesss.volumen);
         
     });
 
