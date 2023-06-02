@@ -21,10 +21,8 @@ const ListadoProduccion = ({producciones}) => {
                 
                     <tr className="bg-white border-b hover:bg-lime-300 text-sm">
                         <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{fechaFormateada}</td>
-                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{ingreso}</td>
                         <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{volumen}</td>
-                        
-                        
+                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{ingreso}</td>
                     </tr>
                 
             </tbody>

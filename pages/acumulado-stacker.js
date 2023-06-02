@@ -75,8 +75,9 @@ export default function AdminProducciones() {
      
           <div className="grid  grid-cols-3 md:grid-cols-3 2xl:grid-cols-3 text-center uppercase font-bold text-sm">
             <div>Fecha</div>
-            <div className="">EMP.</div>
             <div>DESEM.</div>
+            <div className="">EMP.</div>
+            
             
           </div>
 
@@ -90,8 +91,8 @@ export default function AdminProducciones() {
           }
           <div className="grid gap-1 grid-cols-3 md:grid-cols-3 2xl:grid-cols-3 text-center uppercase font-bold text-sm py-2">
             <div>Total</div>
-            <div className="">{formatoNumero(totalIngreso)}</div>
             <div>{formatoNumero(totalVolumens)}</div>
+            <div className="">{formatoNumero(totalIngreso)}</div>
           </div>
         
       
