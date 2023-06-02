@@ -110,7 +110,7 @@ export const SidebarAdmin = () => {
             onClick={toggleVisibility1}
                             
             >
-               {isVisible1 ? '➖ Stock Terminado' : '📋 Stock Terminado'}
+               {isVisible1 ? '➖ Stock Terminado' : '📦 Stock Terminado'}
             </button>
                         
                   
@@ -123,22 +123,22 @@ export const SidebarAdmin = () => {
            <div className='grid gap-1 grid-cols-4 md:grid-cols-4 2xl:grid-cols-4 text-center py-2'> 
             <li>
                 <Link href="/stock-terminado-col" class=" items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
-                    <span class="">COL</span>
+                    <span class="">📦 COL</span>
                 </Link>
             </li>
             <li>
                 <Link href="/stock-terminado-rema" class=" items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
-                    <span class="">RM</span>
+                    <span class="">📦 RM</span>
                 </Link>
             </li>
             <li>
                 <Link href="/stock-terminado-ind" class=" items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
-                    <span class="">IND</span>
+                    <span class="">📦 IND</span>
                 </Link>
             </li>
             <li>
                 <Link href="/stock-terminado-srv" class=" items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
-                    <span class="">SRV</span>
+                    <span class="">📦 SRV</span>
                 </Link>
             </li>
             
@@ -148,7 +148,7 @@ export const SidebarAdmin = () => {
 
            <li>
            <Link href="/stock-terminado" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
-                  📝
+                📦
                   <span class="ml-3">Stock Total</span>
               </Link>
 
@@ -163,8 +163,8 @@ export const SidebarAdmin = () => {
            </li>
            
            <Link href="/stock-saldo" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
-                  📝
-                <span class="ml-3">Stock Saldos</span>
+                📦
+                <span class="ml-3">Stock Reprocesos</span>
             </Link>
 
            <li>

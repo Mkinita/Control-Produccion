@@ -67,6 +67,7 @@ export default function Resumen() {
                         <option value="IND">IND</option>
                         <option value="SERVICIO">SRV</option>
                         <option value="BS">B-S</option>
+                        <option value="CEPILLADO">CEPILLADO</option>
                     </select>
                 
                 </div>
