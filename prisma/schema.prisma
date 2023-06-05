@@ -148,6 +148,20 @@ model Horasseco {
   horastrabajadasseco String?
 }
 
+model Descortezador {
+  id Int @id @default(autoincrement())
+  fecha String
+  cantidad String
+}
+
+
+
+model Partidoras {
+  id Int @id @default(autoincrement())
+  fecha String
+  volumen String
+}
+
 
 
 

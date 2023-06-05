@@ -416,6 +416,53 @@ const CombustibleProvider = ({children}) => {
     }
 
 
+    const colocarDescortezador = async (e) => {
+        e.preventDefault()
+
+        try {
+           await axios.post('/api/descortezador',{cantidad,fecha})
+            // Resetear la app
+            setCantidad('')
+            setFecha('')
+            toast.success('Agregando ⏳')
+
+            setTimeout(() =>{
+                router.push('/acumulado-descortezador')
+            },2000)
+
+        } catch (error) {
+            console.log(error)
+        }
+
+
+        console.log('agregando orden')
+    }
+
+
+
+    const colocarPartidoras = async (e) => {
+        e.preventDefault()
+
+        try {
+           await axios.post('/api/partidoras',{volumen,fecha})
+            // Resetear la app
+            setVolumen('')
+            setFecha('')
+            toast.success('Agregando ⏳')
+
+            setTimeout(() =>{
+                router.push('/acumulado-partidoras')
+            },2000)
+
+        } catch (error) {
+            console.log(error)
+        }
+
+
+        console.log('agregando orden')
+    }
+
+
 
     return(
         <CombustibleContext.Provider
@@ -472,7 +519,9 @@ const CombustibleProvider = ({children}) => {
             colocarHoras,
             horasmes,setHorasmes,
             horasmesseco,setHorasmesseco,
-            horastrabajadas,setHorastrabajadas
+            horastrabajadas,setHorastrabajadas,
+            colocarDescortezador,
+            colocarPartidoras
             // pedidos,
             // fechas,
             // fechauno,

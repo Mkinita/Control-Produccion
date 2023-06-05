@@ -4,7 +4,7 @@ import LayoutIndicadores from "../layout/LayoutIndicadores"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useCallback, useState } from "react"
-import {formatoNumero,formatoNumero1} from "helpers/formato";
+import {formatoNumero,formatoNumero1,formatoNumero2} from "helpers/formato";
 import Produccion from '../components/Produccion'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import "react-circular-progressbar/dist/styles.css"
@@ -253,7 +253,86 @@ export default function InformeAgr() {
 
 
 
+        const fetcher = () => axios('/api/descortezador').then(datos => datos.data)
+    const { data, error, isLoading } = useSWR('/api/descortezador',fetcher,{refreshInterval: 100} )
+
+
         
+    const [data8, setData8] = useState([]);
+        useEffect(() => {
+        async function fetchData() {
+        const response8 = await fetch('/api/descortezador');
+        const data8 = await response8.json();
+        setData8(data8);
+        }
+
+        fetchData();
+    }, []);
+
+
+    let totalIngresodzo = 0;
+
+    data8.forEach((produccionesss) => {
+        totalIngresodzo += parseFloat(produccionesss.cantidad);
+        
+    });
+
+
+    const graficodzo = (totalIngresodzo / 540)
+
+
+
+
+    const fetcherPrt = () => axios('/api/partidoras').then(datos => datos.data)
+    const { data:dataprt, error:errorprt, isLoading:isLoadingprt } = useSWR('/api/partidoras',fetcherPrt,{refreshInterval: 100} )
+
+
+        
+    const [data9, setData9] = useState([]);
+        useEffect(() => {
+        async function fetchData() {
+        const response9 = await fetch('/api/partidoras');
+        const data9 = await response9.json();
+        setData9(data9);
+        }
+
+        fetchData();
+    }, []);
+
+
+    let totalIngresoprt = 0;
+
+    data9.forEach((produccionesss) => {
+        totalIngresoprt += parseFloat(produccionesss.volumen);
+        
+    });
+
+
+
+
+    const dataprts = {
+        labels: data9.map((producciones) => producciones.fecha),
+        datasets: [
+          {
+            label: 'secado',
+            data: data9.map((producciones) => producciones.volumen),
+            backgroundColor: ' #a3e635',
+            borderColor: ' #a3e636',
+            borderWidth: 1,
+            barPercentage: 0.3, // Ancho de las barras
+            categoryPercentage: 1, // Espacio entre barras
+          },
+        ],
+      };
+
+
+    
+
+
+
+
+
+    
         
 
         
@@ -297,6 +376,47 @@ export default function InformeAgr() {
                         </div>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+                    <div className="bg-white p-4 rounded-md shadow">
+                            <div className='flex items-center'>
+                                <h2 className="text-lg font-semibold text-right ml-6">Descortezador</h2>
+                                <div style={{ width: '42%', margin: 'auto',}}>
+                                    <CircularProgressbar
+                                        styles={buildStyles({
+                                            pathColor: graficodzo >= 4.5 ? '#22c55e' : '#DC2626',
+                                            trailColor: '#F5F5F5',
+                                            textColor: '#0a0a0a',
+                                            textSize:'14px'
+                                            
+                                        })}
+                                        value={100}
+                                        text={`${formatoNumero2(graficodzo)} / Minuto`}
+                                    />
+
+
+                                </div>
+                            </div>
+                            <div className='flex justify-center py-6'>     
+                                <div className="overflow-x-auto py-2 text-xs font-bold">
+                                    <div className="min-w-full">
+                                        <table className="table-auto">
+                                        <tbody>
+                                            <tr>
+                                                <td className="border border-lime-200 px-1 py-2 text-center" colspan="4">Real </td>
+                                            </tr>
+                                            <tr>
+                                                <td className="border border-lime-200 px-1 py-2">Ingreso</td>
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresodzo)} m³</td> 
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresodzo / 540)} Trozos / Minuto</td>  
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+
+                        
                         <div className="bg-white p-4 rounded-md shadow">
                             <div className='flex items-center'>
                                 <h2 className="text-lg font-semibold text-right ml-6">Aserradero</h2>
@@ -339,6 +459,79 @@ export default function InformeAgr() {
                                 </div>
                             </div>  
                         </div>
+
+                        
+
+                        <div className="bg-white p-4 rounded-md shadow">
+                            <div className=''>
+                                <h2 className="text-lg text-center font-semibold">Partidoras</h2>
+                                <div className='p-2 m-auto items-center hidden sm:block'>
+                                <Bar className='' data={dataprts} />
+                                </div>
+
+                               
+                            </div>
+                            <div className='flex justify-center'>     
+                                <div className="overflow-x-auto py-2 text-xs font-bold">
+                                    <div className="min-w-full">
+                                        <table className="table-auto">
+                                        <tbody>
+                                            <tr>
+                                                <td className="border border-lime-200 px-1 py-2 text-center" colspan="2">Real </td>
+                                                <td className="border border-lime-200 px-1 py-2 text-center" colspan="2">Proyeccion </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td className="border border-lime-200 px-1 py-2">Produccion</td>
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoprt)} m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoprt / TOTAL * TOTAL_)} m³</td>   
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+
+
+
+
+                        <div className="bg-white p-4 rounded-md shadow">
+                            <div className=''>
+                                <h2 className="text-lg text-center font-semibold">Stacker</h2>
+                                <div className='p-2 m-auto items-center hidden sm:block'>
+                                <Bar className='' data={dataemp} />
+                                </div>
+
+                               
+                            </div>
+                            <div className='flex justify-center'>     
+                                <div className="overflow-x-auto py-2 text-xs font-bold">
+                                    <div className="min-w-full">
+                                        <table className="table-auto">
+                                        <tbody>
+                                            <tr>
+                                                <td className="border border-lime-200 px-1 py-2 text-center" colspan="2">Real </td>
+                                                <td className="border border-lime-200 px-1 py-2 text-center" colspan="2">Proyeccion </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td className="border border-lime-200 px-1 py-2">Produccion</td>
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoemp)} m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalVolumensemp / 27 * 180)} m³</td>   
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                        
+
+                        
+
+
+
                         <div className="bg-white p-4 rounded-md shadow">
                             <div className='flex items-center'>
                                 <h2 className="text-lg font-semibold text-right ml-6">Clasificacion</h2>
@@ -444,36 +637,7 @@ export default function InformeAgr() {
 
                         {/* ///// */}
 
-                        <div className="bg-white p-4 rounded-md shadow">
-                            <div className=''>
-                                <h2 className="text-lg text-center font-semibold">Stacker</h2>
-                                <div className='p-2 m-auto items-center hidden sm:block'>
-                                <Bar className='' data={dataemp} />
-                                </div>
-
-                               
-                            </div>
-                            <div className='flex justify-center'>     
-                                <div className="overflow-x-auto py-2 text-xs font-bold">
-                                    <div className="min-w-full">
-                                        <table className="table-auto">
-                                        <tbody>
-                                            <tr>
-                                                <td className="border border-lime-200 px-1 py-2 text-center" colspan="2">Real </td>
-                                                <td className="border border-lime-200 px-1 py-2 text-center" colspan="2">Proyeccion </td>
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td className="border border-lime-200 px-1 py-2">Produccion</td>
-                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoemp)} m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalVolumensemp / 18 * 180)} m³</td>   
-                                            </tr>
-                                        </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
+                        
                         <div className="bg-white p-4 rounded-md shadow">
                             <div className=''>
                                 <h2 className="text-lg text-center font-semibold">Secado</h2>
@@ -496,7 +660,7 @@ export default function InformeAgr() {
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Produccion</td>
                                                 <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco)} m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco  / 96 * 720)} m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco  / 120 * 720)} m³</td>   
                                             </tr>
                                         </tbody>
                                         </table>
