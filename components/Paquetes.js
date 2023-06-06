@@ -8,11 +8,12 @@ const Equipo = ({paquet}) => {
   
 
     const {handlesetPaquete, handleChangeModal} =useCombustible()
-    const {detalle} = paquet;
+    const {detalle,espesor,largo} = paquet;
   return (
     <div className="border p-2 w-full h-full">
       
       <div className='p-2 text-center'>
+      <h3 className='text-2xl font-bold'>{espesor}</h3>
         <h3 className='text-2xl font-bold'>{detalle}</h3>
         
         <button

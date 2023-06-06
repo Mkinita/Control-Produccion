@@ -41,6 +41,7 @@ const Etiquetas = ({asr}) => {
       <p className="text-sm text-gray-700 mt-2 font-bold">{formatoNumero(espesor * ancho * largo * piezas *1 / 1000000 )} m³</p>
     </div>
     </div>
+    
     </div>
 
 

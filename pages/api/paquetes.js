@@ -20,8 +20,7 @@ export default async function handler(req, res) {
         largo: req.body.largo,
         piezas: req.body.piezas,
         calidad: req.body.calidad,
-        cantidad: req.body.cantidad,
-        fecha: req.body.fecha,
+        detalle: req.body.detalle
       },
     });
     res.json(paquetes);

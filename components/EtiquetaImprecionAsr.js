@@ -13,7 +13,7 @@ const Etiquetas = ({asr}) => {
 
 
 
-    const {id,espesor,ancho,largo,piezas,calidad,fecha,cantidad} = asr;
+    const {id,fecha,cantidad,pedido02} = asr;
 
     const router = useRouter()
 
@@ -40,20 +40,19 @@ const Etiquetas = ({asr}) => {
       <div className='text-center'>
         
         
-                
-                  <h3 className='text-lg font-bold'>{espesor}x{ancho}x{largo}</h3>
-                  <p className='text-sm font-bold'>{calidad}</p>
+      {pedido02.map(oc => (
+        <div key={oc.id}>
+                  <h3 className='text-lg font-bold'>{oc.espesor}x{oc.detalle}</h3>
+                  <p className='text-sm font-bold'>{oc.calidad}</p>
                   
                   <p className='text-sm font-bold'>{formatiarFecha(fecha)}</p>
                   <div className='py-1'>
       <QRGeneratorAsr asr={('https://control-produccion-production.up.railway.app/etiquetaasr/')+ ('/')+(id)} />
       <p className='text-sm font-bold py-1'>N°: {id}</p>
-      <p className="text-sm text-gray-700 mt-2 font-bold">{formatoNumero(espesor * ancho * largo * piezas *cantidad / 1000000 )} m³</p>
-    
-          
+      <p className="text-sm text-gray-700 mt-2 font-bold">{formatoNumero(oc.espesor * oc.ancho * oc.largo * oc.piezas *1 / 1000000 )} m³</p>        
         </div>
-        
-      
+        </div>
+        ))}
 
 
 <div className='grid gap-4 grid-cols-2 md:grid-cols-2 2xl:grid-cols-2'>  

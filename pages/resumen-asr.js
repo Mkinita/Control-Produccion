@@ -7,7 +7,7 @@ import ResumenSolicitusAsr from "../components/ResumenSolicitusAsr"
 
 export default function Resumen() {
 
-    const { pedido02,total,colocarOrden } = useCombustible()
+    const { pedido02,total,colocarAserradero } = useCombustible()
 
     const comprobarPedido = useCallback(() => {
         return pedido02.length === 0 || pedido02 === "" || pedido02.length <1 ;
@@ -38,7 +38,7 @@ export default function Resumen() {
             )}
 
         <form 
-                onSubmit={colocarOrden}
+                onSubmit={colocarAserradero}
                 className="text-center"
                 
             >

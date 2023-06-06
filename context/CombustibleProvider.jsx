@@ -20,6 +20,7 @@ const CombustibleProvider = ({children}) => {
     const [nombre, setNombre] = useState('')
     const [id, setId] = useState('')
     const [cantidad, setCantidad] = useState('')
+    const [detalle, setDetalle] = useState('')
     const [total, setTotal] = useState(0)
     const [totalasr, setTotalasr] = useState(0)
     const [espesor, setEspesor] = useState('')
@@ -229,6 +230,21 @@ const CombustibleProvider = ({children}) => {
         const pedidoActualizado = pedido.filter( equipo => equipo.id !== id)
         setPedido(pedidoActualizado)
         toast.error('Solicitud Eliminada')
+
+        setTimeout(() =>{
+            router.push('/')
+        },1000)
+    }
+
+
+    const handleElimanarSolicitudAsr = id => {
+        const pedidoActualizados = pedido02.filter( paquete => paquete.id !== id)
+        setPedido02(pedidoActualizados)
+        toast.error('Solicitud Eliminada')
+
+        setTimeout(() =>{
+            router.push('/ingreso-aserradero')
+        },1000)
     }
 
 
@@ -402,14 +418,10 @@ const CombustibleProvider = ({children}) => {
         e.preventDefault()
 
         try {
-           await axios.post('/api/aserradero',{espesor,ancho,largo,piezas,calidad,cantidad,fecha: new Date()})
+           await axios.post('/api/aserradero',{pedido02,cantidad,fecha: new Date()})
             // Resetear la app
-            setEspesor('')
-            setAncho('')
-            setLargo('')
-            setPiezas('')
-            setCalidad('')
             setCantidad('')
+            setPedido02([])
             toast.success('Agregando ⏳')
 
             setTimeout(() =>{
@@ -498,6 +510,34 @@ const CombustibleProvider = ({children}) => {
 
 
 
+    const colocarPaquete = async (e) => {
+        e.preventDefault()
+
+        try {
+           await axios.post('/api/paquetes',{espesor,ancho,largo,piezas,detalle,calidad})
+            // Resetear la app
+            setEspesor('')
+            setAncho('')
+            setLargo('')
+            setPiezas('')
+            setCalidad('')
+            setDetalle('')
+            toast.success('Agregando⏳')
+
+            setTimeout(() =>{
+                router.push('/ingreso-aserradero')
+            },3000)
+
+        } catch (error) {
+            console.log(error)
+        }
+
+
+        console.log('agregando orden')
+    }
+
+
+
     return(
         <CombustibleContext.Provider
         value={{
@@ -560,7 +600,10 @@ const CombustibleProvider = ({children}) => {
             paquete, setPaquete,
             handleAgregarPaquete,
             pedido02,setPedido02,
-            totalasr
+            totalasr,
+            handleElimanarSolicitudAsr,
+            colocarPaquete,
+            detalle,setDetalle
             // pedidos,
             // fechas,
             // fechauno,

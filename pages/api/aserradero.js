@@ -15,13 +15,9 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     const asr = await prisma.asr.create({
       data: {
-        espesor: req.body.espesor,
-        ancho: req.body.ancho,
-        largo: req.body.largo,
-        piezas: req.body.piezas,
-        calidad: req.body.calidad,
         cantidad: req.body.cantidad,
         fecha: req.body.fecha,
+        pedido02: req.body.pedido02
       },
     });
     res.json(asr);

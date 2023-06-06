@@ -42,10 +42,24 @@ const Sidebar = () => {
                                 </li>
 
                                 <li>
+                                    <Link href="/ingreso-escuadria" class="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+                                        ➕
+                                        <span class="ml-3">Ingresar Escuadria</span>
+                                    </Link>
+                                </li>
+
+                                <li>
                                     <Link href="/aserradero-actual" class="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                                         📆
                                         <span class="ml-3">Produccion Actual</span>
                                     </Link>
+                                </li>
+
+                                <li>
+                                    <Link href="/listado-producciones-fecha-asr" class="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+                                        📅
+                                        <span class="ml-3">Producciones</span>
+                                    </Link>                                   
                                 </li>
 
 
