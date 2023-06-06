@@ -11,14 +11,17 @@ const CombustibleProvider = ({children}) => {
     const [orden, setOrden] = useState([])
     const [faenaActual, setFaenaActual] = useState({})
     const [equipo, setEquipo] = useState({})
+    const [paquete, setPaquete] = useState({})
     const [saldo, setSaldo] = useState([])
     const [modal, setModal] = useState(false)
     const [pedido, setPedido] = useState([])
+    const [pedido02, setPedido02] = useState([])
     const [pedidose, setPedidose] = useState([])
     const [nombre, setNombre] = useState('')
     const [id, setId] = useState('')
     const [cantidad, setCantidad] = useState('')
     const [total, setTotal] = useState(0)
+    const [totalasr, setTotalasr] = useState(0)
     const [espesor, setEspesor] = useState('')
     const [ancho, setAncho] = useState('')
     const [largo, setLargo] = useState('')
@@ -90,6 +93,9 @@ const CombustibleProvider = ({children}) => {
     }, [pedido])
 
 
+    
+
+
 
 
 
@@ -124,6 +130,10 @@ const CombustibleProvider = ({children}) => {
         setEquipo(equipo)
     }
 
+    const handlesetPaquete = paquete => {
+        setPaquete(paquete)
+    }
+
     const handlesetPedidos = pedidos => {
         setPedidos(pedidos)
         console.log('agregando orden')
@@ -156,6 +166,30 @@ const CombustibleProvider = ({children}) => {
 
             setTimeout(() =>{
                 router.push('/resumen')
+            },500)
+        }
+
+        setModal(false)
+        
+    }
+
+
+    const handleAgregarPaquete = ({...paquete}) => {
+        if(pedido02.some(paqueteState => paqueteState.id === paquete.id)) {
+           // Actualizar la cantidad
+           const pedido02Actualizado = pedido02.map(paqueteState => paqueteState.id === paquete.id ? paquete : paqueteState)
+           setPedido02(pedido02Actualizado)
+
+           toast.success('Guardado Correctamente')
+           setTimeout(() =>{
+            router.push('/resumen-asr')
+        },500)
+        } else {
+            setPedido02([...pedido02, paquete])
+            toast.success('Agregado Solicitud')
+
+            setTimeout(() =>{
+                router.push('/resumen-asr')
             },500)
         }
 
@@ -521,7 +555,12 @@ const CombustibleProvider = ({children}) => {
             horasmesseco,setHorasmesseco,
             horastrabajadas,setHorastrabajadas,
             colocarDescortezador,
-            colocarPartidoras
+            colocarPartidoras,
+            handlesetPaquete,
+            paquete, setPaquete,
+            handleAgregarPaquete,
+            pedido02,setPedido02,
+            totalasr
             // pedidos,
             // fechas,
             // fechauno,

@@ -1,184 +1,65 @@
-import LayoutAsr from "../layout/LayoutAsr"
-import { useEffect, useCallback, useState } from "react"
-import useCombustible from "../hooks/useCombustible"
+import { Inter } from '@next/font/google'
+import LayoutAsr from '../layout/LayoutAsr'
+import Paquetes from '../components/Paquetes'
+import useCombustible from '../hooks/useCombustible'
+import {useState, useEffect} from 'react'
+import Head from 'next/head'
 
 
 
-export default function Saldo() {
 
 
+export default function Home() {
 
-    const { nombre,setNombre,
-            espesor,setEspesor,
-            ancho,setAncho,
-            largo,setLargo,
-            piezas,setPiezas,
-            calidad,setCalidad,
-            cantidad,setCantidad,
-            colocarAserradero
-    } = useCombustible()
+  const {faenaActual} = useCombustible()
+  const [ users, setUsers ] = useState([])
+  const [ search, setSearch ] = useState("")
+
+  //función para traer los datos de la API
+  const URL = '/api/paquetes'
+
+  const showData = async () => {
+    const response = await fetch(URL)
+    const data = await response.json()
+    console.log(data)
+    setUsers(data)
+  }   
+   //función de búsqueda
+  const searcher = (e) => {
+      setSearch(e.target.value)   
+  }
+   //metodo de filtrado 2   
+   const results = !search ? users : users.filter((dato)=> dato.detalle.toLowerCase().includes(search.toLocaleLowerCase()))
+  
+   useEffect( ()=> {
+    showData()
+  }, [])
 
 
+  
+
+  return (
     
-
-
-    const comprobarPedido = useCallback(() => {
-        return piezas === "" || piezas.length <1;
-        
-    },[piezas])
-
-
-    useEffect(() => {
-        comprobarPedido()
-    },[comprobarPedido])
-
-
-
-
-
-    
-
-
-   return (
-        
-    <LayoutAsr pagina='Saldos'>
-
-        <h1 className="text-2xl font-black text-center">Aserradero</h1>
-        <p className="text-2xl my-10"></p>
-        <div class="container mx-auto">
-            <form 
-                onSubmit={colocarAserradero}
-                class="text-center"
-            >
-
-                
-
-
-                <div class="grid grid-cols-3 gap-2 py-5">
-                    <div>
-                        <label for="espesor" class="block text-xs font-medium text-gray-700 mb-1">Espesor</label>
-                        <select
-                            id="espesor"
-                            className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
-                            value={espesor}
-                            onChange={e => setEspesor(e.target.value)}
-                        >
-                            <option value="">-</option>
-                            <option value="24">1'</option>
-                            <option value="37">1.5'</option>
-                            <option value="45">2'</option>
-                            <option value="18">18</option>
-                            <option value="24.0">24</option>
-                            <option value="32">32</option>
-                            <option value="37.0">37</option>
-                            <option value="45.0">45</option>
-                            <option value="54">54</option>
-                            <option value="85">85</option>
-                        </select>
-                    </div> 
-
-                    <div>
-                        <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Ancho</label>
-                        <select
-                            id="ancho"
-                            className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
-                            value={ancho}
-                            onChange={e => setAncho(e.target.value)}
-                        >
-                            <option value="">-</option>
-                            <option value="1000">AV</option>
-                            <option value="75">3</option>
-                            <option value="95">4</option>
-                            <option value="125">5</option>
-                            <option value="145">6</option>
-                            <option value="175">7</option>
-                            <option value="195">8</option>
-                            <option value="245">10</option>
-                            <option value="295">12</option>
-                        </select>
-                    </div> 
-
-
-                    <div>
-                        <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Largo</label>
-                        <select
-                            id="largo"
-                            className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
-                            value={largo}
-                            onChange={e => setLargo(e.target.value)}
-                        >
-                            <option value="">-</option>
-                            <option value="2.13">7</option>
-                            <option value="2.44">8</option>
-                            <option value="3.05">10</option>
-                            <option value="3.20">3.20</option>
-                            <option value="3.66">12</option>
-                            <option value="3.96">13</option>
-                            <option value="4.00">4</option>
-                        </select>
-                    </div>   
-
-
-
-                    <div>
-                        <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Pz/Crds</label>
-                        <input
-                            id="piezas"
-                            type="number"
-                            className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
-                            value={piezas}
-                            onChange={e => setPiezas(e.target.value)}
-                        />
-                    </div>   
-
-
-                    <div>
-                        <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Calidad</label>
-                        <select
-                            id="calidad"
-                            className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
-                            value={calidad}
-                            onChange={e => setCalidad(e.target.value)}
-                        >
-                            <option value="">-</option>
-                            <option value="Lateral">Lateral</option>
-                            <option value="Centarl">Central</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Cantidad</label>
-                        <input
-                            id="cantidad"
-                            type="number"
-                            className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
-                            value={cantidad}
-                            onChange={e => setCantidad(e.target.value)}
-                        />
-                    </div>          
-                </div>
-
-                
-
-                <div className="mt-6">
-                            
-                    <input
-                        type="submit"
-                        className= {`${comprobarPedido() ? 'bg-indigo-100' : 'bg-indigo-600 hover:bg-indigo-800'} w-full lg:w-auto px-5 py-2 rounded uppercase font-bold text-white text-center`}
-                        value="Ingresar"
-                        disabled={comprobarPedido()}    
-                    />
-                </div>
-            
-                    
-            </form>
-                
-        </div>
-
-            
-
-        </LayoutAsr>
-        
-        
-   )
+    <LayoutAsr pagina={`Inicio - Producto`}>
+      <Head>
+        <meta name="description" content="Carlos Jerez" />
+        <link rel="icon" href="/CJ.png" />
+        <title>Control Produccion AGR</title>
+        <meta property="og:image" content="/CJ.png" />
+        <meta name="twitter:image" content="/CJ.png" />
+      </Head>
+  
+      <p className='text-2xl mx-5 my-3 text-center'>
+        Ingresa Escuadría
+      </p>
+      <div className='mt-auto'>
+        <input value={search} onChange={searcher} type="text" placeholder='Buscar' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
+      </div>
+      <div className='grid gap-4 grid-cols-2 md:grid-cols-4 2xl:grid-cols-4'>  
+        {results.map(paquet=>(
+          <Paquetes key={paquet.id} paquet={paquet}/>
+        ))}
+      </div>
+    </LayoutAsr>
+  )
 }

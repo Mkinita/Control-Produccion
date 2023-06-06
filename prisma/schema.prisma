@@ -125,12 +125,8 @@ model Secado {
 
 model Asr {
   id Int @id @default(autoincrement())
-  espesor String
-  ancho String
-  largo String
-  piezas String
-  calidad String
-  cantidad String 
+  cantidad String?
+  pedido02 Json
   fecha DateTime
   estado Boolean  @default(false)
 }
@@ -160,6 +156,16 @@ model Partidoras {
   id Int @id @default(autoincrement())
   fecha String
   volumen String
+}
+
+model Paquetes {
+  id Int @id @default(autoincrement())
+  espesor String 
+  ancho String 
+  largo String 
+  piezas String
+  calidad String
+  detalle String
 }
 
 

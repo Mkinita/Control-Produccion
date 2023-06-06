@@ -72,23 +72,14 @@ export default function Saldo() {
 
                                 <div>
                                     <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Ancho</label>
-                                    <select
+                                    <input
                                         id="ancho"
+                                        type="number"
                                         className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
                                         value={ancho}
                                         onChange={e => setAncho(e.target.value)}
-                                    >
-                                        <option value="">-</option>
-                                        <option value="75">3</option>
-                                        <option value="95">4</option>
-                                        <option value="125">5</option>
-                                        <option value="145">6</option>
-                                        <option value="175">7</option>
-                                        <option value="195">8</option>
-                                        <option value="245">10</option>
-                                        <option value="295">12</option>
-                                        <option value="1000">AV</option>
-                                    </select>
+                                    />
+                                        
                                 </div>
 
 
