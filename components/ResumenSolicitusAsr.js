@@ -16,7 +16,7 @@ const ResumenSolicitud = ({paquet}) => {
           </button>
         </div>
         <div className="md:w-4/6">
-            <p className="text-lg font-bold text-center">{paquet.detalle}</p>
+            <p className="text-lg font-bold text-center">{paquet.espesor01} x {paquet.detalle}</p>
             <p className="text-sm font-bold mt-2 text-center">Cantidad: 1</p>
             <p className="text-lg font-bold text-center">{formatoNumero( paquet.espesor * paquet.ancho * paquet.largo * paquet.piezas * 1 / 1000000)} m³</p>
         </div>
