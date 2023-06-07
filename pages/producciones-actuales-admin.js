@@ -25,6 +25,7 @@ export default function InformeAgr() {
     const [totalVolumen, setTotalVolumen] = useState(0);
     const [totalVolumen01, setTotalVolumen01] = useState(0)
     const [totalVolumen02, setTotalVolumen02] = useState(0);
+    const [totalVolumen03, setTotalVolumen03] = useState(0);
 
 
     const sumarVolumenes = () => {
@@ -48,14 +49,19 @@ export default function InformeAgr() {
 
 
 
+
+
+    
+
     const sumarVolumenesasr = () => {
-        let sumas = 0;
-        dataAserradero.forEach((emp) => {
-            sumas += emp.espesor * emp.ancho * emp.largo * emp.piezas * emp.cantidad / 1000000;
-          
+        let suma = 0;
+        dataAserradero.forEach((asr) => {
+          asr.pedido02.forEach((oc) => {
+            suma += oc.espesor * oc.ancho * oc.largo * oc.piezas * 1 / 1000000;
+          });
         });
-        setTotalVolumen02(sumas);
-    };
+      setTotalVolumen03(suma);
+      };
 
 
     const fetcherCamara1 = () => axios('/api/camara1').then(datos => datos.data)
@@ -165,8 +171,8 @@ export default function InformeAgr() {
                     <div className='grid gap-2 grid-cols-1 md:grid-cols-4 2xl:grid-cols-4'>  
                         <div className="border border-solid border-lime-500">
                             <p className="text-center uppercase font-bold text-xl">Aserradero</p>
-                            <p className="text-center text-lg">{formatoNumero(totalVolumen02)} m³</p>
-                            <p className="text-center text-sm">{formatoNumero(totalVolumen02 / 9)} m³ / Horas </p>
+                            <p className="text-center text-lg">{formatoNumero(totalVolumen03)} m³</p>
+                            <p className="text-center text-sm">{formatoNumero(totalVolumen03 / 9)} m³ / Horas </p>
                         </div>
 
                         <div className="border border-solid border-lime-500">
