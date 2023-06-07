@@ -161,6 +161,7 @@ model Partidoras {
 model Paquetes {
   id Int @id @default(autoincrement())
   espesor String 
+  espesor01 String 
   ancho String 
   largo String 
   piezas String

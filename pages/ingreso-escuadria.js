@@ -13,6 +13,8 @@ export default function Saldo() {
         equipo,
         espesor,
             setEspesor,
+            espesor01,
+            setEspesor01,
             ancho,
             setAncho,
             largo,
@@ -55,7 +57,18 @@ export default function Saldo() {
                     onSubmit={colocarPaquete}
                     class="text-center"
                 >
-                   <div class="grid grid-cols-3 gap-2 py-5"> 
+                   <div class="grid grid-cols-2 gap-2 py-5"> 
+
+                                <div>
+                                <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Espesor Pizarra</label>    
+                                <input
+                                    id="espesor"
+                                    type="number"
+                                    className="bg-gray-200 w-full lg:w-3/4 p-1 rounded-md"
+                                    value={espesor01}
+                                    onChange={e => setEspesor01(e.target.value)}
+                                />
+                                </div>
                     
                                 <div>
                                 <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Espesor</label>    
@@ -67,6 +80,7 @@ export default function Saldo() {
                                     onChange={e => setEspesor(e.target.value)}
                                 />
                                 </div>
+                                
 
 
 

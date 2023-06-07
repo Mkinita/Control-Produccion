@@ -16,6 +16,7 @@ export default async function handler(req, res) {
     const paquetes = await prisma.paquetes.create({
       data: {
         espesor: req.body.espesor,
+        espesor01: req.body.espesor01,
         ancho: req.body.ancho,
         largo: req.body.largo,
         piezas: req.body.piezas,

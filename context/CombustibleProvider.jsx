@@ -24,6 +24,7 @@ const CombustibleProvider = ({children}) => {
     const [total, setTotal] = useState(0)
     const [totalasr, setTotalasr] = useState(0)
     const [espesor, setEspesor] = useState('')
+    const [espesor01, setEspesor01] = useState('')
     const [ancho, setAncho] = useState('')
     const [largo, setLargo] = useState('')
     const [piezas, setPiezas] = useState('')
@@ -514,9 +515,10 @@ const CombustibleProvider = ({children}) => {
         e.preventDefault()
 
         try {
-           await axios.post('/api/paquetes',{espesor,ancho,largo,piezas,detalle,calidad})
+           await axios.post('/api/paquetes',{espesor,espesor01,ancho,largo,piezas,detalle,calidad})
             // Resetear la app
             setEspesor('')
+            setEspesor01('')
             setAncho('')
             setLargo('')
             setPiezas('')
@@ -603,7 +605,8 @@ const CombustibleProvider = ({children}) => {
             totalasr,
             handleElimanarSolicitudAsr,
             colocarPaquete,
-            detalle,setDetalle
+            detalle,setDetalle,
+            espesor01,setEspesor01
             // pedidos,
             // fechas,
             // fechauno,
