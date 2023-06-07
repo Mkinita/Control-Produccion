@@ -9,8 +9,8 @@ export default function OrdenCompra() {
 
 
 
-    const fetcher = () => axios('api/listado-saldo').then(datos => datos.data)
-    const { data, error, isLoading } = useSWR('api/listado-saldo',fetcher,{refreshInterval: 100} )
+    const fetcher = () => axios('api/listado-saldo-nuevo').then(datos => datos.data)
+    const { data, error, isLoading } = useSWR('api/listado-saldo-nuevo',fetcher,{refreshInterval: 100} )
 
 
    return (
