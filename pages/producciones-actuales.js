@@ -50,11 +50,14 @@ export default function InformeAgr() {
 
     const sumarVolumenesasr = () => {
         let sumas = 0;
-        dataAserradero.forEach((emp) => {
-            sumas += emp.espesor * emp.ancho * emp.largo * emp.piezas * emp.cantidad / 1000000;
-          
-        });
+        dataAserradero.forEach((asr) => {
+            asr.pedido02.forEach((oc) => {
+              sumas += oc.espesor * oc.ancho * oc.largo * oc.piezas * 1 / 1000000;
+            });
+          });
         setTotalVolumen02(sumas);
+
+        
     };
 
 
