@@ -29,7 +29,7 @@ export default function Home() {
       setSearch(e.target.value)   
   }
    //metodo de filtrado 2   
-   const results = !search ? users : users.filter((dato)=> dato.espesor.toLowerCase().includes(search.toLocaleLowerCase()))
+   const results = !search ? users : users.filter((dato)=> dato.espesor01.toLowerCase().includes(search.toLocaleLowerCase()))
   
    useEffect( ()=> {
     showData()
