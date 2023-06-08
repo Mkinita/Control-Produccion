@@ -34,7 +34,7 @@ const Etiquetas = ({asr}) => {
     {pedido02.map(oc => (
                 <div key={oc.id}>
       <div className='text-center'>
-                  <p className='text-lg font-bold '>{oc.espesor}x{detalle}</p>
+                  <p className='text-lg font-bold '>{oc.espesor}x{oc.detalle}</p>
                   <p className='text-sm font-bold '>{calidad}</p>
                   <p className='text-sm font-bold'>{formatiarFecha(fecha)}</p>
                   <div className='py-1'>
