@@ -174,8 +174,8 @@ export default function InformeAgr() {
 
                         <div className="border border-solid border-lime-500">
                         <p className="text-center uppercase font-bold text-xl">Partidoras</p>
-                            <p className="text-center text-lg"> m³</p>
-                            <p className="text-center text-sm"> m³ / Horas </p>
+                            <p className="text-center text-lg">32 m³</p>
+                            <p className="text-center text-sm">3.5 m³ / Horas </p>
                         </div>
 
                         <div className="border border-solid border-lime-500">
