@@ -123,12 +123,19 @@ export default function AdminProducciones() {
             ):
             <p className='text-center m-10'>Sin Produccion</p>
           }
-          <div className="grid gap-1 grid-cols-3 md:grid-cols-4 2xl:grid-cols-4 text-center uppercase font-bold text-sm py-2">
-            <div>Total</div>
-            <div>{formatoNumero(totalIngreso)}</div>
-            <div>{formatoNumero(totalVolumens)}</div>
-            <div className="">{formatoNumero(totalVolumens / totalIngreso * 100)}%</div>
-          </div>
+          <table className="table-auto w-full text-center bg-white">
+            <tbody>
+                
+                    <tr className="bg-white text-sm uppercase font-bold">
+                        <td className="px-2 py-4 w-1/5 text-center">Total</td>
+                        <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso)}</td>
+                        <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens)}</td>
+                        <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens / totalIngreso * 100)}%</td>
+                        
+                    </tr>
+                
+            </tbody>
+        </table>
         </div>
       </div>
 

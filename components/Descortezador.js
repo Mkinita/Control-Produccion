@@ -1,5 +1,5 @@
 import {formatiarFecha} from "helpers/fecha"
-import {formatoNumero} from "helpers/formato"
+import {formatoNumero,formatoNumero2} from "helpers/formato"
 import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import { format, parseISO } from 'date-fns';
@@ -22,7 +22,7 @@ const ListadoProduccion = ({producciones}) => {
                     <tr className="bg-white border-b hover:bg-lime-300 text-sm">
                         <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{fechaFormateada}</td>
                         <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{cantidad}</td>
-                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{formatoNumero(cantidad / 540)}</td>
+                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{formatoNumero2(cantidad / 540)}</td>
                         
                     </tr>
                 

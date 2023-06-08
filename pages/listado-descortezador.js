@@ -3,7 +3,7 @@ import axios from 'axios'
 import AdminLayoutInforme from "../layout/AdminLayoutInforme"
 import Descortezador from '../components/Descortezador'
 import React, { useState, useEffect } from 'react';
-import {formatoNumero} from "helpers/formato";
+import {formatoNumero,formatoNumero2} from "helpers/formato";
 import  ProduccionesEncabezado from '../components/ProduccionesEncabezado'
 
 
@@ -95,7 +95,7 @@ export default function AdminProducciones() {
             <p className='text-center m-10'>Sin Produccion</p>
           }
 
-            <table className="table-auto w-full text-center bg-white text-gray-700">
+            <table className="table-auto w-full text-center bg-white uppercase font-bold">
                 <tbody>
                     
                         <tr className="bg-white">

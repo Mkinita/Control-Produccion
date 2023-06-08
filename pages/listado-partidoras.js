@@ -94,7 +94,7 @@ export default function AdminProducciones() {
             <p className='text-center m-10'>Sin Produccion</p>
           }
 
-            <table className="table-auto w-full text-center bg-white text-gray-700">
+            <table className="table-auto w-full text-center bg-white uppercase font-bold">
                 <tbody>
                     
                         <tr className="bg-white">
