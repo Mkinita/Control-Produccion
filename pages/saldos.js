@@ -136,6 +136,8 @@ export default function Saldo() {
                                         <option value="Reproceso">Reproceso</option>
                                         <option value="Humedo">Humedo</option>
                                         <option value="Rechazo">Rechazo</option>
+                                        <option value="BS">BS</option>
+                                        <option value="Clear">Clear</option>
                                     </select>
                                 </div>
                             <div>
