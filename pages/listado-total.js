@@ -406,7 +406,7 @@ export default function InformeAgr() {
                                             </tr>
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Ingreso</td>
-                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresodzo)} m³</td> 
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresodzo)}</td> 
                                                 <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresodzo / 3240)} Trozos / Minuto</td>  
                                             </tr>
                                         </tbody>
