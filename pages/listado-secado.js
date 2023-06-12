@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import axios from 'axios'
 import AdminLayoutInforme from "../layout/AdminLayoutInforme"
-import Produccion from '../components/Produccion'
+import ProduccionSecado from '../components/ProduccionSecado'
 import React, { useState, useEffect } from 'react';
 import {formatoNumero} from "helpers/formato";
 import { Bar } from 'react-chartjs-2';
@@ -113,10 +113,22 @@ export default function AdminProducciones() {
 
       <div className={`${isVisibleproveedor ? 'hidden' : ''}`}>
         <div className={`${cuadro ? 'hidden' : ''}`}>
-        <ProduccionesEncabezadodos/>
+        <table className="table-auto w-full text-center bg-white text-gray-700 font-bold">
+                <tbody>
+                    
+                        <tr className="bg-white">
+                            <td className="px-1 py-4 w-1/5 text-center border border-lime-400">Fecha</td>
+                            <td className="px-1 py-4 w-1/5 text-center border border-lime-400">ING.</td>
+                            <td className="px-1 py-4 w-1/5 text-center border border-lime-400">PRO.</td>
+                            <td className="px-1 py-4 w-1/5 text-center border border-lime-400">m³/hr</td>
+                            <td className="px-1 py-4 w-1/5 text-center border border-lime-400">%</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
 
           {data && data.length ? results.map(producciones =>
-            <Produccion
+            <ProduccionSecado
               key={producciones.id}
               producciones={producciones} 
             />
@@ -130,6 +142,7 @@ export default function AdminProducciones() {
                         <td className="px-2 py-4 w-1/5 text-center">Total</td>
                         <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso)}</td>
                         <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens)}</td>
+                        <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso / 264)}</td>
                         <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens / totalIngreso * 100)}%</td>
                         
                     </tr>

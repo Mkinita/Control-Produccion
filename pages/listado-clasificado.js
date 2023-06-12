@@ -109,7 +109,7 @@ export default function AdminProducciones() {
       <p className="text-2xl my-10"></p>
       <div className='flex flex-col items-center justify-center'>
         <h2 className="text-2xl font-black text-center">Clasificado</h2>
-        <input value={search} onChange={searcher} type="text" placeholder='Filtrar Por Fecha 🔍' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 
+        <input value={search} onChange={searcher} type="date" placeholder='Filtrar Por Fecha 🔍' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 
       </div>
 
       <div className={`${isVisibleproveedor ? 'hidden' : ''}`}>
@@ -131,8 +131,10 @@ export default function AdminProducciones() {
                     <tr className="bg-white text-sm uppercase font-bold">
                         <td className="px-2 py-4 w-1/5 text-center">Total</td>
                         <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso)}</td>
+                        <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso / 63)}</td>
                         <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens)}</td>
-                        <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens / totalIngreso * 100)}%</td>
+                        <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens / 63)}</td>
+                        <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens / totalIngreso * 100)}</td>
                         
                     </tr>
                 
