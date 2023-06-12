@@ -18,12 +18,17 @@ const ListadoProduccion = () => {
             <tbody>
                 
                     <tr className="bg-white border-b  text-sm">
-                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400 ">Fecha</td>
-                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">Ingr.</td>
+                        <td className="px-1 py-4 w-1/5 text-center border border-lime-400 ">Fecha</td>
+                        <td className="px-1 py-4 w-1/5 text-center border border-lime-400">Ingr.</td>
+                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">m³/hr</td>
                         <td className="px-2 py-4 w-1/5 text-center border border-lime-400">Pro.</td>
-                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">%</td>
+                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">m³/hr</td>
+                        <td className="px-5 py-4 w-1/5 text-center border border-lime-400">%</td>
                         
                     </tr>
+
+
+                    
                 
             </tbody>
         </table>

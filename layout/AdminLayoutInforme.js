@@ -43,7 +43,7 @@ export default function AdminLayout({ children, pagina }) {
             
 
             <main className="">
-                <div className="p-10">
+                <div className="p-2">
                   
                     {children}
                 </div>
