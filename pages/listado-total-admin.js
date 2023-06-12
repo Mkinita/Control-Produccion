@@ -515,6 +515,38 @@ export default function InformeAgr() {
                         </div>
 
 
+                        <div className="bg-white p-4 rounded-md shadow">
+                            <div className=''>
+                                <h2 className="text-lg text-center font-semibold">Secado</h2>
+                                <div className='p-2 m-auto items-center hidden sm:block'>
+                                <Bar className='' data={dataseco} />
+                                </div>
+
+                               
+                            </div>
+                            <div className='flex justify-center'>     
+                                <div className="overflow-x-auto py-2 text-xs font-bold">
+                                    <div className="min-w-full">
+                                        <table className="table-auto">
+                                        <tbody>
+                                            <tr>
+                                                <td className="border border-lime-200 px-1 py-2 text-center" colspan="2">Real </td>
+                                                <td className="border border-lime-200 px-1 py-2 text-center" colspan="2">Proyeccion </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td className="border border-lime-200 px-1 py-2">Produccion</td>
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco)} m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco  / 264 * 720)} m³</td>   
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+
+
 
 
 
@@ -624,36 +656,7 @@ export default function InformeAgr() {
                         {/* ///// */}
 
                         
-                        <div className="bg-white p-4 rounded-md shadow">
-                            <div className=''>
-                                <h2 className="text-lg text-center font-semibold">Secado</h2>
-                                <div className='p-2 m-auto items-center hidden sm:block'>
-                                <Bar className='' data={dataseco} />
-                                </div>
-
-                               
-                            </div>
-                            <div className='flex justify-center'>     
-                                <div className="overflow-x-auto py-2 text-xs font-bold">
-                                    <div className="min-w-full">
-                                        <table className="table-auto">
-                                        <tbody>
-                                            <tr>
-                                                <td className="border border-lime-200 px-1 py-2 text-center" colspan="2">Real </td>
-                                                <td className="border border-lime-200 px-1 py-2 text-center" colspan="2">Proyeccion </td>
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td className="border border-lime-200 px-1 py-2">Produccion</td>
-                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco)} m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco  / 264 * 720)} m³</td>   
-                                            </tr>
-                                        </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
+                        
 
                         
                         
