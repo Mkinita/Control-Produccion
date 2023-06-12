@@ -108,17 +108,25 @@ export default function AdminProducciones() {
       <p className="text-2xl my-10"></p>
       <div className='flex flex-col items-center justify-center'>
         <h2 className="text-2xl font-black text-center">Stacker</h2>
-        <input value={search} onChange={searcher} type="text" placeholder='Filtrar Por Fecha 🔍' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 
+        <input value={search} onChange={searcher} type="date" placeholder='Filtrar Por Fecha 🔍' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 
       </div>
 
       <div className={`${isVisibleproveedor ? 'hidden' : ''}`}>
         <div className={`${cuadro ? 'hidden' : ''}`}>
-        <div className="grid  grid-cols-3 md:grid-cols-3 2xl:grid-cols-3 text-center uppercase font-bold text-sm">
-            <div>Fecha</div>
-            <div className="">EMP.</div>
-            <div>DESEM.</div>
-            
-          </div>
+        
+          <table className="table-auto w-full text-center bg-white text-gray-700 font-bold">
+                <tbody>
+                    
+                        <tr className="bg-white">
+                            <td className="px-1 py-4 w-1/5 text-center border border-lime-400">Fecha</td>
+                            <td className="px-1 py-4 w-1/5 text-center border border-lime-400">EMP.</td>
+                            <td className="px-1 py-4 w-1/5 text-center border border-lime-400">m³/hr</td>
+                            <td className="px-1 py-4 w-1/5 text-center border border-lime-400">DESEM.</td>
+                            <td className="px-1 py-4 w-1/5 text-center border border-lime-400">m³/hr</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
 
           {data && data.length ? results.map(producciones =>
             <ProduccionStacker
@@ -136,7 +144,9 @@ export default function AdminProducciones() {
                         <tr className="bg-white">
                             <td className="px-2 py-4 w-1/5 text-center">Total</td>
                             <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso)}</td>
+                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso / 63)}</td>
                             <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens)}</td>
+                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens / 63)}</td>
                         </tr>
                     
                 </tbody>

@@ -109,7 +109,7 @@ export default function AdminProducciones() {
       <p className="text-2xl my-10"></p>
       <div className='flex flex-col items-center justify-center'>
         <h2 className="text-2xl font-black text-center">Aserradero</h2>
-        <input value={search} onChange={searcher} type="text" placeholder='Filtrar Por Fecha 🔍' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 
+        <input value={search} onChange={searcher} type="date" placeholder='Filtrar Por Fecha 🔍' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 
       </div>
 
       <div className={`${isVisibleproveedor ? 'hidden' : ''}`}>
