@@ -59,7 +59,7 @@ export default function AdminProducciones() {
               <p className="">{formatoNumero(totalVolumen)} m³</p>
             </div>
             <div className='mt-auto'>
-                <input value={search} onChange={searcher} type="text" placeholder='Buscar Por Fecha' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
+                <input value={search} onChange={searcher} type="date" placeholder='Buscar Por Fecha' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
             </div>
             <Tabla/>
             {data && data.length ? results.map(orden =>
