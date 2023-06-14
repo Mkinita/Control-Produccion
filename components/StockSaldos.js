@@ -13,9 +13,10 @@ const ListadoSaldosFecha = ({saldo}) => {
             <tbody>
 
                     <tr className="bg-white border-b hover:bg-lime-300 text-sm">
-                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">{formatiarFecha(fecha)}</td>
-                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">{espesor}x{ancho}x{largo}</td>
-                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">1</td>
+                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">{espesor}</td>
+                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">{ancho}</td>
+                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">{largo}</td>
+                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">{piezas}</td>
                         <td className="px-6 py-4 w-1/5 text-center border border-lime-400">{calidad}</td>
                         <td className="px-6 py-4 w-1/5 text-center border border-lime-400">{formatoNumero(espesor * ancho * largo * piezas *1 / 1000000 )}</td>
                     </tr>

@@ -84,16 +84,17 @@ export default function AdminProducciones() {
             <div className='mt-auto'>
                 <input value={search} onChange={searcher} type="text" placeholder='Buscar Por Escuadría' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
             </div>
-            <table className="table-auto w-full text-center bg-white text-gray-700">
+            <table className="table-auto w-full text-center bg-white text-black">
                 <tbody>
-
-                        <tr className="bg-white border-b text-sm">
-                            <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Fecha</td>
-                            <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Detalle</td>
-                            <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Cantidad</td>
-                            <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Calidad</td>
-                            <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Volumen</td>
-                        </tr>
+                        
+                    <tr className="bg-white border-b  text-sm">
+                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Espesor</td>
+                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Ancho</td>
+                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Largo</td>
+                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Piezas</td>
+                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Calidad</td>
+                        <td className="px-8 py-4 w-1/5 text-center border border-lime-400">m³</td>
+                    </tr>
 
                 </tbody>
             </table>
