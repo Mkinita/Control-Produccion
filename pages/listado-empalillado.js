@@ -145,9 +145,9 @@ export default function AdminProducciones() {
                             <td className="px-2 py-4 w-1/5 text-center">Total</td>
                             
                             <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens)}</td>
-                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens / 90)}</td>
+                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens / 99)}</td>
                             <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso)}</td>
-                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso / 90)}</td>
+                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso / 99)}</td>
                         </tr>
                     
                 </tbody>
