@@ -279,7 +279,7 @@ export default function InformeAgr() {
     });
 
 
-    const graficodzo = (totalIngresodzo / 2700)
+    const graficodzo = (totalIngresodzo / 7020)
 
 
 
