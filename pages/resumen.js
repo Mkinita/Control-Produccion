@@ -96,6 +96,7 @@ export default function Resumen() {
                         <option value="Camelio">Camelio</option>
                         <option value="Seivb">Seivb</option>
                         <option value="Laminas">Laminas</option>
+                        <option value="Sonamu">Sonamu</option>
                     </select>
                 
                 </div>
