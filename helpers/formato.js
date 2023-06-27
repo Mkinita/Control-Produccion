@@ -1,5 +1,9 @@
 const formatoNumero = (num) => {
-  return num.toString().slice(0,5);
+  return num.toString().slice(0,4);
+}
+
+const formatoNumeroDes = (num) => {
+  return num.toString().slice(0,3);
 }
 
 const formatoNumero1 = (num) => {
@@ -7,7 +11,7 @@ const formatoNumero1 = (num) => {
 }
 
 const formatoNumero2 = (num) => {
-  return num.toString().slice(0,3);
+  return num.toString().slice(0,4);
 }
 
 
@@ -25,7 +29,8 @@ export {
     formatoNumero1,
     formatoNumero2,
     formatodetalle,
-    formatocalidad
+    formatocalidad,
+    formatoNumeroDes
 }
 
 

@@ -3,7 +3,7 @@ import axios from 'axios'
 import AdminLayoutInforme from "../layout/AdminLayoutInforme"
 import Descortezador from '../components/Descortezador'
 import React, { useState, useEffect } from 'react';
-import {formatoNumero,formatoNumero2} from "helpers/formato";
+import {formatoNumeroDes} from "helpers/formato";
 import  ProduccionesEncabezado from '../components/ProduccionesEncabezado'
 
 
@@ -59,6 +59,44 @@ export default function AdminProducciones() {
     totalIngreso += parseFloat(producciones.cantidad);
   });
 
+
+
+  const fetcherSeco = () => axios('/api/horas').then(datos => datos.data)
+  const { data: dataSeco, error: errorSeco, isLoading: isLoadingSeco } = useSWR('/api/horas', fetcherSeco, { refreshInterval: 100 })
+
+  const [data5, setData5] = useState([]);
+  const [users5, setUsers5] = useState([]);
+
+    // Función para traer los datos de la API
+    const URLSxxxx = '/api/horas';
+    const showData5 = async () => {
+    const response5 = await fetch(URLSxxxx);
+      const data5 = await response5.json();
+      setUsers5(data5);
+    };
+
+      useEffect(() => {
+      showData5();
+      }, []);
+
+        // Obtener horas mes y horas trabajadas como enteros
+        const horasMes = users5.map(user => parseInt(user.horasmes, 10));
+        const horasTrabajadas = users5.map(user => parseInt(user.horastrabajadas, 10));
+
+        // Sumar las horas
+        const horasmes = horasMes.reduce((total, hora) => total + hora, 0)
+        const horstrabajo = horasTrabajadas.reduce((total, hora) => total + hora, 0);
+
+       
+        const TOTAL_ = horasmes;
+        const TOTAL = horstrabajo;
+
+        const TotalMinutos = TOTAL * 60
+
+
+
+        
+
  
 
 
@@ -70,7 +108,7 @@ export default function AdminProducciones() {
       <div className='flex flex-col items-center justify-center'>
         <h2 className="text-2xl font-black text-center">Descortezador</h2>
         
-        <input value={search} onChange={searcher} type="text" placeholder='Filtrar Por Fecha 🔍' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 
+        <input value={search} onChange={searcher} type="date" placeholder='Filtrar Por Fecha 🔍' className='text-gray-700 bg-gray-50 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 
       </div>
 
 
@@ -100,8 +138,8 @@ export default function AdminProducciones() {
                     
                         <tr className="bg-white">
                             <td className="px-2 py-4 w-1/5 text-center">Total</td>
-                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso)}</td>
-                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso / 9)}</td>
+                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroDes(totalIngreso)}</td>
+                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroDes(totalIngreso / TotalMinutos)}</td>
                         </tr>
                     
                 </tbody>

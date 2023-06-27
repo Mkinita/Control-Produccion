@@ -245,6 +245,8 @@ export default function InformeAgr() {
         const TOTAL_ = horasmes;
         const TOTAL = horstrabajo;
 
+        const TotalMinutos = TOTAL * 60
+
 
 
         const diastotalestrabajados = (TOTAL / 9)
@@ -278,7 +280,7 @@ export default function InformeAgr() {
     });
 
 
-    const graficodzo = (totalIngresodzo / 8100)
+    const graficodzo = (totalIngresodzo / (TOTAL * 60))
 
 
 
@@ -407,7 +409,7 @@ export default function InformeAgr() {
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Ingreso</td>
                                                 <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresodzo)}</td> 
-                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresodzo / 8100)} Trozos / Minuto</td>  
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresodzo / (TOTAL * 60))} Trozos / Minuto</td>  
                                             </tr>
                                         </tbody>
                                         </table>
@@ -518,7 +520,7 @@ export default function InformeAgr() {
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Produccion</td>
                                                 <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoemp)} m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalVolumensemp /135 * 180)} m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalVolumensemp /TOTAL * TOTAL_)} m³</td>   
                                             </tr>
                                         </tbody>
                                         </table>
@@ -570,7 +572,7 @@ export default function InformeAgr() {
                                 <div style={{ width: '40%', margin: 'auto' }}>
                                     <CircularProgressbar
                                         styles={buildStyles({
-                                            pathColor: proyeccioncla >= 97.5 ? '#22c55e' : '#DC2626',
+                                            pathColor: proyeccioncla >= 96.5 ? '#22c55e' : '#DC2626',
                                             trailColor: '#F5F5F5',
                                             textColor: '#0a0a0a',
                                         })}
@@ -615,7 +617,7 @@ export default function InformeAgr() {
                                 <div style={{ width: '40%', margin: 'auto' }}>
                                     <CircularProgressbar
                                         styles={buildStyles({
-                                            pathColor: graficodesp > 4.0 ?'#22c55e' : '#DC2626',
+                                            pathColor: graficodesp > 3.0 ?'#22c55e' : '#DC2626',
                                             trailColor: '#F5F5F5',
                                             textColor: '#0a0a0a',
                                         })}
