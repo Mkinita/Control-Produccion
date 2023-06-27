@@ -139,7 +139,7 @@ export default function AdminProducciones() {
                         <tr className="bg-white">
                             <td className="px-2 py-4 w-1/5 text-center">Total</td>
                             <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroDes(totalIngreso)}</td>
-                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroDes(totalIngreso / TotalMinutos)}</td>
+                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroDes(totalIngreso / 540)}</td>
                         </tr>
                     
                 </tbody>

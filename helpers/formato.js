@@ -6,6 +6,14 @@ const formatoNumeroDes = (num) => {
   return num.toString().slice(0,3);
 }
 
+const formatoNumeroPar = (num) => {
+  return num.toString().slice(0,4);
+}
+
+const formatoNumeroPart = (num) => {
+  return num.toString().slice(0,5);
+}
+
 const formatoNumero1 = (num) => {
   return num.toString().slice(0,1);
 }
@@ -30,7 +38,9 @@ export {
     formatoNumero2,
     formatodetalle,
     formatocalidad,
-    formatoNumeroDes
+    formatoNumeroDes,
+    formatoNumeroPar,
+    formatoNumeroPart
 }
 
 
