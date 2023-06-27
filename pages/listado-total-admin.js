@@ -556,7 +556,7 @@ export default function InformeAgr() {
                                 <div style={{ width: '40%', margin: 'auto' }}>
                                     <CircularProgressbar
                                         styles={buildStyles({
-                                            pathColor: proyeccioncla >= 97.5 ? '#22c55e' : '#DC2626',
+                                            pathColor: proyeccioncla >= 96.5 ? '#22c55e' : '#DC2626',
                                             trailColor: '#F5F5F5',
                                             textColor: '#0a0a0a',
                                         })}
@@ -601,7 +601,7 @@ export default function InformeAgr() {
                                 <div style={{ width: '40%', margin: 'auto' }}>
                                     <CircularProgressbar
                                         styles={buildStyles({
-                                            pathColor: graficodesp > 4.0 ?'#22c55e' : '#DC2626',
+                                            pathColor: graficodesp > 3.0 ?'#22c55e' : '#DC2626',
                                             trailColor: '#F5F5F5',
                                             textColor: '#0a0a0a',
                                         })}

@@ -1,9 +1,6 @@
 import {formatiarFecha} from "helpers/fecha"
 import {formatoNumero,formatoNumeroDes} from "helpers/formato"
-import { Bar } from 'react-chartjs-2';
-import Chart from 'chart.js/auto';
 import { format, parseISO } from 'date-fns';
-import useSWR from 'swr'
 import React, { useState, useEffect } from 'react';
 
 const ListadoProduccion = ({producciones}) => {
@@ -11,6 +8,8 @@ const ListadoProduccion = ({producciones}) => {
 
     const fechaS = typeof fecha === 'string' ? parseISO(fecha) : fecha;
     const fechaFormateada = format(fechaS, 'MMMM dd');
+
+   
 
 
     

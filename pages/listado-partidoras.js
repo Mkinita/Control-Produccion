@@ -3,7 +3,7 @@ import axios from 'axios'
 import AdminLayoutInforme from "../layout/AdminLayoutInforme"
 import Partidoras from '../components/Partidoras'
 import React, { useState, useEffect } from 'react';
-import {formatoNumero,formatoNumero2} from "helpers/formato";
+import {formatoNumero,formatoNumero2, formatoNumeroPart} from "helpers/formato";
 import  ProduccionesEncabezado from '../components/ProduccionesEncabezado'
 
 
@@ -99,7 +99,7 @@ export default function AdminProducciones() {
                     
                         <tr className="bg-white">
                             <td className="px-2 py-4 w-1/5 text-center">Total</td>
-                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso)}</td>
+                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroPart(totalIngreso)}</td>
                             <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso / 9)}</td>
                         </tr>
                     

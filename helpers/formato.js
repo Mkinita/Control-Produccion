@@ -14,6 +14,14 @@ const formatoNumeroPart = (num) => {
   return num.toString().slice(0,5);
 }
 
+const formatoNumeroEmp = (num) => {
+  return num.toString().slice(0,4);
+}
+
+const formatoNumeroDsp = (num) => {
+  return num.toString().slice(0,3);
+}
+
 const formatoNumero1 = (num) => {
   return num.toString().slice(0,1);
 }
@@ -40,7 +48,9 @@ export {
     formatocalidad,
     formatoNumeroDes,
     formatoNumeroPar,
-    formatoNumeroPart
+    formatoNumeroPart,
+    formatoNumeroEmp,
+    formatoNumeroDsp
 }
 
 

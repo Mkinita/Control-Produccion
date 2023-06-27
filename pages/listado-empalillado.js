@@ -3,7 +3,7 @@ import axios from 'axios'
 import AdminLayoutInforme from "../layout/AdminLayoutInforme"
 import ProduccionStacker from '../components/ProduccionStacker'
 import React, { useState, useEffect } from 'react';
-import {formatoNumero} from "helpers/formato";
+import {formatoNumero,formatoNumeroEmp,formatoNumeroDsp} from "helpers/formato";
 import { Bar } from 'react-chartjs-2';
 import  ProduccionesEncabezado from '../components/ProduccionesEncabezado'
 import  ProduccionesEncabezadodos from '../components/ProduccionesEncabezadodos'
@@ -145,9 +145,9 @@ export default function AdminProducciones() {
                             <td className="px-2 py-4 w-1/5 text-center">Total</td>
                             
                             <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens)}</td>
-                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens / 135)}</td>
-                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso)}</td>
-                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso / 135)}</td>
+                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroEmp(totalVolumens / 135)}</td>
+                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroDsp(totalIngreso)}</td>
+                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroDsp(totalIngreso / 135)}</td>
                         </tr>
                     
                 </tbody>
