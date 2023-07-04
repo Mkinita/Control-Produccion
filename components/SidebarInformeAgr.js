@@ -87,10 +87,16 @@ export const SidebarAdmin = () => {
            </li>
 
            <li>
+              <Link href="/listado-total-mes-anterior-junio" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
+                  📊
+                  <span class="ml-3">Junio</span>
+              </Link>
+           </li>
+
+           <li>
               <Link href="/listado-total" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
                   📊
-                  {/* <span class="ml-3">{currentMonth}</span> */}
-                  <span class="ml-3">Junio</span>
+                  <span class="ml-3">{currentMonth}</span>
               </Link>
            </li>
 
@@ -120,18 +126,17 @@ export const SidebarAdmin = () => {
                 {isVisible2 && (
             <div className="p-2 space-y-1">
 
-            <li>
+            {/* <li>
               <Link href="/producciones-mes-anterior" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
                   📊
                   <span class="ml-3">Mayo</span>
               </Link>
-           </li>
+           </li> */}
 
            <li>
               <Link href="/listado-aserradero" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
                   📊
-                  {/* <span class="ml-3">{currentMonth}</span> */}
-                  <span class="ml-3">Junio</span>
+                  <span class="ml-3">{currentMonth}</span>
               </Link>
            </li>
 
