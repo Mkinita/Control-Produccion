@@ -533,7 +533,7 @@ export default function InformeAgr() {
 
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Total</td>
-                                                <td className="border border-lime-200 px-1 py-2 text-center"colspan="2">{formatoNumero(totalIngresoemp)+22.3} m³</td>
+                                                <td className="border border-lime-200 px-1 py-2 text-center"colspan="2">{formatoNumero(totalIngresoemp + 22.3)} m³</td>
                                                
                                             </tr>
 
