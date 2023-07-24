@@ -46,6 +46,7 @@ const CombustibleProvider = ({children}) => {
 
     const [volumen, setVolumen] = useState('')
     const [fecha, setFecha] = useState('')
+    const [fecha01, setFecha01] = useState('')
     const [ingreso, setIngreso] = useState('')
     const [ingreso01, setIngreso01] = useState('')
 
@@ -308,7 +309,7 @@ const CombustibleProvider = ({children}) => {
         e.preventDefault()
 
         try {
-           await axios.post('/api/empalillado',{espesor,ancho,largo,piezas,calidad,cantidad,fecha: new Date()})
+           await axios.post('/api/empalillado',{espesor,ancho,largo,piezas,calidad,cantidad,fecha01,fecha: new Date()})
             // Resetear la app
             setEspesor('')
             setAncho('')
@@ -316,6 +317,7 @@ const CombustibleProvider = ({children}) => {
             setPiezas('')
             setCalidad('')
             setCantidad('')
+            setFecha01('')
             toast.success('Agregando ⏳')
 
             setTimeout(() =>{
@@ -606,7 +608,8 @@ const CombustibleProvider = ({children}) => {
             handleElimanarSolicitudAsr,
             colocarPaquete,
             detalle,setDetalle,
-            espesor01,setEspesor01
+            espesor01,setEspesor01,
+            fecha01,setFecha01,
             // pedidos,
             // fechas,
             // fechauno,

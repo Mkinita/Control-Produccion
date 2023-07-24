@@ -21,6 +21,7 @@ export default function Saldo() {
             setPiezas,
             calidad,
             setCalidad,cantidad,setCantidad,
+            fecha01,setFecha01,
         colocarOrden, colocarEmpalilado } = useCombustible()
 
 
@@ -53,7 +54,13 @@ export default function Saldo() {
                 <form 
                     onSubmit={colocarEmpalilado}
                     class="text-center"
+
                 >
+
+                    <div>
+                        <label for="fecha" class="block text-xs font-medium text-gray-700 mb-1">Fecha</label>
+                        <input id="fecha" type="date" class="bg-gray-200 w-full p-2 rounded-md" value={fecha01} onChange={e => setFecha01(e.target.value)} />
+                    </div> 
 
                     
                     <div class="grid grid-cols-3 gap-2 py-5">

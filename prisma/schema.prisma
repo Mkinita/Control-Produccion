@@ -93,6 +93,7 @@ model Emp {
   calidad String
   cantidad String
   fecha DateTime
+  fecha01 String?
   estado Boolean  @default(false)
 }
 
