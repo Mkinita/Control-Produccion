@@ -65,7 +65,7 @@ export default function AdminProducciones() {
   const despunte = totalVolumens * 0.02
   const humedo = totalVolumens * 0.01
   const rzo = totalVolumens * 0.012
-  const totaltotal = totalVolumens + resproceso + despunte + humedo
+  const totaltotal = totalVolumens + resproceso + despunte + humedo + rzo
   const [currentMonth, setCurrentMonth] = useState('');
 
   useEffect(() => {
@@ -131,9 +131,9 @@ export default function AdminProducciones() {
                     <tr className="bg-white text-sm uppercase font-bold">
                         <td className="px-2 py-4 w-1/5 text-center">Total</td>
                         <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso)}</td>
-                        <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso / 180)}</td>
+                        <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalIngreso / 9)}</td>
                         <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens)}</td>
-                        <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens / 180)}</td>
+                        <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens / 9)}</td>
                         <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens / totalIngreso * 100)}</td>
                         
                     </tr>
