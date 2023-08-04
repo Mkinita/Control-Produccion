@@ -44,7 +44,7 @@ const Etiquetas = ({orden}) => {
                 <div key={oc.id}>
                   <h3 className='text-lg font-bold'>{oc.detalle}</h3>
                   <p className='text-sm font-bold'>{nombre}</p>
-                  <p className='text-sm font-bold'>{cliente}</p>
+                  <p className='text-sm font-bold'></p>
                   <p className='text-sm font-bold'>{formatiarFecha(fecha)}</p>
                   <div className='py-1'>
       <QRGenerator orden={('https://control-produccion-production.up.railway.app/etiqueta/')+ ('/')+(id)} />
