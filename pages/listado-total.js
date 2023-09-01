@@ -528,13 +528,13 @@ export default function InformeAgr() {
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Seco</td>
                                                 <td className="border border-lime-200 px-1 py-2">766.1 m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">842.7 m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">766.1 m³</td>   
                                             </tr>
 
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Total</td>
                                                 <td className="border border-lime-200 px-1 py-2 text-center">{formatoNumero(totalIngresoemp + 766.1)} m³</td>
-                                                <td className="border border-lime-200 px-1 py-2 text-center">{formatoNumero(totalVolumensemp /TOTAL * TOTAL_ + 842.7)} m³</td>
+                                                <td className="border border-lime-200 px-1 py-2 text-center">{formatoNumero(totalVolumensemp /TOTAL * TOTAL_ + 766.1)} m³</td>
                                                
                                             </tr>
 
@@ -568,7 +568,7 @@ export default function InformeAgr() {
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Produccion</td>
                                                 <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco)} m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco  / 552 * 744)} m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco  / 744 * 744)} m³</td>   
                                             </tr>
                                         </tbody>
                                         </table>
