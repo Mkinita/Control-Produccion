@@ -512,14 +512,14 @@ export default function InformeAgr() {
 
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Seco</td>
-                                                <td className="border border-lime-200 px-1 py-2">101.1 m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">479.7 m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">160.1 m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">608.3 m³</td>   
                                             </tr>
 
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Total</td>
-                                                <td className="border border-lime-200 px-1 py-2 text-center">{formatoNumero(totalIngresoemp + 479.7)} m³</td>
-                                                <td className="border border-lime-200 px-1 py-2 text-center">{formatoNumero(totalVolumensemp /TOTAL * TOTAL_ + 101.1)} m³</td>
+                                                <td className="border border-lime-200 px-1 py-2 text-center">{formatoNumero(totalIngresoemp + 608.3)} m³</td>
+                                                <td className="border border-lime-200 px-1 py-2 text-center">{formatoNumero(totalVolumensemp /TOTAL * TOTAL_ + 160.1)} m³</td>
                                                
                                             </tr>
 
@@ -553,7 +553,7 @@ export default function InformeAgr() {
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Produccion</td>
                                                 <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco)} m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco  / 96 * 720)} m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco  / 120 * 720)} m³</td>   
                                             </tr>
                                         </tbody>
                                         </table>
