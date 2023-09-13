@@ -24,7 +24,7 @@ const Etiquetas = ({asr}) => {
          await axios.post(`/api/editaretiquetaasr/${id}`)
           toast.success('🏠')
           setTimeout(() =>{
-            router.push('/aserradero-actual')
+            router.push('/ingreso-aserradero')
         },1000)
       } catch (error) {
           console.log(error)
