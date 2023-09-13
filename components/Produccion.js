@@ -20,12 +20,12 @@ const ListadoProduccion = ({producciones}) => {
             <tbody>
                 
                     <tr className="bg-white border-b hover:bg-lime-300 text-sm">
-                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{fechaFormateada}</td>
-                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{ingreso}</td>
-                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{formatoNumeroPar (ingreso / 9)}</td>
-                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{volumen}</td>
-                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{formatoNumeroPar(volumen / 9)}</td>
-                        <td className="px-2 py-4 w-1/5 text-center border border-lime-400">{formatoNumeroPar(volumen / ingreso * 100)}</td>
+                        <td className="px-2 py-2 w-1/6 text-center border border-lime-400">{fechaFormateada}</td>
+                        <td className="px-2 py-2 w-1/6 text-center border border-lime-400">{ingreso}</td>
+                        <td className="px-2 py-2 w-1/12 text-center border border-lime-400">{formatoNumeroPar (ingreso / 9)}</td>
+                        <td className="px-2 py-2 w-1/6 text-center border border-lime-400">{volumen}</td>
+                        <td className="px-2 py-2 w-1/12 text-center border border-lime-400">{formatoNumeroPar(volumen / 9)}</td>
+                        <td className="px-2 py-2 w-1/12 text-center border border-lime-400">{formatoNumeroPar(volumen / ingreso * 100)}</td>
                         
                     </tr>
                 

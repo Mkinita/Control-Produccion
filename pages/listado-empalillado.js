@@ -100,6 +100,33 @@ export default function AdminProducciones() {
     setCuadro(!cuadro);
   };
 
+  const [users5, setUsers5] = useState([]);
+
+    // Función para traer los datos de la API
+    const URLSxxxx = '/api/horas';
+
+    const showData5 = async () => {
+    const response5 = await fetch(URLSxxxx);
+    const data5 = await response5.json();
+    setUsers5(data5);
+    };
+
+    useEffect(() => {
+    showData5();
+    }, []);
+
+        // Obtener horas mes y horas trabajadas como enteros
+        const horasMes = users5.map(user => parseInt(user.horasmes, 10));
+        const horasTrabajadas = users5.map(user => parseInt(user.horastrabajadas, 10));
+
+        // Sumar las horas
+        const horasmes = horasMes.reduce((total, hora) => total + hora, 0)
+        const horstrabajo = horasTrabajadas.reduce((total, hora) => total + hora, 0);
+
+       
+        const TOTAL_ = horasmes;
+        const TOTAL = horstrabajo;
+
 
   return(
     <AdminLayoutInforme pagina={'Listado-OC'}>
@@ -145,9 +172,9 @@ export default function AdminProducciones() {
                             <td className="px-2 py-4 w-1/5 text-center">Total</td>
                             
                             <td className="px-2 py-4 w-1/5 text-center">{formatoNumero(totalVolumens)}</td>
-                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroEmp(totalVolumens / 72)}</td>
+                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroEmp(totalVolumens / TOTAL)}</td>
                             <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroDsp(totalIngreso)}</td>
-                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroDsp(totalIngreso / 72)}</td>
+                            <td className="px-2 py-4 w-1/5 text-center">{formatoNumeroDsp(totalIngreso / TOTAL)}</td>
                         </tr>
                     
                 </tbody>

@@ -40,10 +40,17 @@ const formatocalidad= (num) => {
   return num.toString().slice(0,3);
 }
 
+
+
+const formatoNumero5 = (num) => {
+  return num.toString().slice(0,5);
+}
+
 export {
     formatoNumero,
     formatoNumero1,
     formatoNumero2,
+    formatoNumero5,
     formatodetalle,
     formatocalidad,
     formatoNumeroDes,

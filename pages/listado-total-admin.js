@@ -4,7 +4,7 @@ import LayoutIndicadores from "../layout/LayoutIndicadores"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useCallback, useState } from "react"
-import {formatoNumero,formatoNumero1,formatoNumero2} from "helpers/formato";
+import {formatoNumero,formatoNumero1,formatoNumero2,formatoNumero5} from "helpers/formato";
 import Produccion from '../components/Produccion'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import "react-circular-progressbar/dist/styles.css"
@@ -106,61 +106,7 @@ export default function InformeAgr() {
     });
 
 
-    const total_despacho = (totalIngresodesp + totalVolumensdesp + totalIngreso01desp)
-
     
-    
-
-
-    
-    
-    
-    
-    
-    
-    const fetcherEmpalillado = () => axios('/api/produccion-empalillado').then(datos => datos.data)
-    const { data: dataEmpalillado, error: errorEmpalillado, isLoading: isLoadingEmpalillado } = useSWR('/api/produccion-empalillado',fetcherEmpalillado,{refreshInterval: 100} )
-
-
-    const [data3, setData3] = useState([]);
-      useEffect(() => {
-        async function fetchData3() {
-        const response3 = await fetch('/api/produccion-empalillado');
-        const data3 = await response3.json();
-        setData3(data3);
-      }
-  
-      fetchData3();
-    }, []);
-
-
-
-    let totalVolumensemp = 0;
-    let totalIngresoemp = 0;
-
-    data3.forEach((produccionesss) => {
-        totalVolumensemp += parseFloat(produccionesss.volumen);
-        totalIngresoemp += parseFloat(produccionesss.volumen);
-        
-    });
-
-    const proyeccionemp = totalIngresoemp !== 0 ? (totalVolumensemp / totalIngresoemp) * 100 : 0;
-
-
-    const dataemp = {
-        labels: data3.map((producciones) => producciones.fecha),
-        datasets: [
-          {
-            label: 'Produccion Stacker',
-            data: data3.map((producciones) => producciones.volumen),
-            backgroundColor: ' #a3e635',
-            borderColor: ' #a3e636',
-            borderWidth: 1,
-            barPercentage: 0.3, // Ancho de las barras
-            categoryPercentage: 1, // Espacio entre barras
-          },
-        ],
-      };
 
 
 
@@ -168,7 +114,7 @@ export default function InformeAgr() {
 
 
       const fetcherSecado = () => axios('/api/produccion-secado').then(datos => datos.data)
-      const { data: dataSecado, error: errorSecado, isLoading: isLoadingSecado } = useSWR('/api/produccion-secado',fetcherEmpalillado,{refreshInterval: 100} )
+      const { data: dataSecado, error: errorSecado, isLoading: isLoadingSecado } = useSWR('/api/produccion-secado',fetcherSecado,{refreshInterval: 100} )
   
   
       const [data4, setData4] = useState([]);
@@ -325,6 +271,109 @@ export default function InformeAgr() {
           },
         ],
       };
+
+
+      const [users10, setUsers10] = useState([]);
+
+    // Función para traer los datos de la API
+    const URLSECO = '/api/horasseco';
+
+    const showData10 = async () => {
+    const response10 = await fetch(URLSECO);
+    const data10 = await response10.json();
+    setUsers10(data10);
+    };
+
+    useEffect(() => {
+    showData10();
+    }, []);
+
+        // Obtener horas mes y horas trabajadas como enteros
+        const horasMesS = users10.map(user => parseInt(user.horasmesseco, 10));
+        const horasTrabajadasS = users10.map(user => parseInt(user.horastrabajadasseco, 10));
+
+        // Sumar las horas
+        const horasmesS = horasMesS.reduce((total, hora) => total + hora, 0)
+        const horstrabajoS = horasTrabajadasS.reduce((total, hora) => total + hora, 0);
+
+       
+        const TOTAL_S = horasmesS;
+        const TOTALS = horstrabajoS;
+
+
+        const total_despacho = (totalIngresodesp + totalVolumensdesp + totalIngreso01desp)
+
+    
+    
+
+
+    
+    
+    
+    
+    
+    
+    const fetcherEmpalillado = () => axios('/api/produccion-empalillado').then(datos => datos.data)
+    const { data: dataEmpalillado, error: errorEmpalillado, isLoading: isLoadingEmpalillado } = useSWR('/api/produccion-empalillado',fetcherEmpalillado,{refreshInterval: 100} )
+
+
+    const [data3, setData3] = useState([]);
+      useEffect(() => {
+        async function fetchData3() {
+        const response3 = await fetch('/api/produccion-empalillado');
+        const data3 = await response3.json();
+        setData3(data3);
+      }
+  
+      fetchData3();
+    }, []);
+
+
+
+    let totalVolumensemp = 0;
+    let totalIngresoemp = 0;
+    let totaldesempalillado = 0;
+
+    data3.forEach((produccionesss) => {
+        totalVolumensemp += parseFloat(produccionesss.volumen);
+        totalIngresoemp += parseFloat(produccionesss.volumen);
+        totaldesempalillado += parseFloat(produccionesss.ingreso);
+        
+    });
+
+    const proyeccionemp = totalIngresoemp !== 0 ? (totalVolumensemp / totalIngresoemp) * 100 : 0;
+    const proyecciondesempalillado = (totaldesempalillado / TOTAL * TOTAL_)
+
+
+
+   
+
+
+    
+
+
+    const dataemp = {
+        labels: data3.map((producciones) => producciones.fecha),
+        datasets: [
+          {
+            label: 'Produccion Stacker',
+            data: data3.map((producciones) => producciones.volumen),
+            backgroundColor: ' #a3e635',
+            borderColor: ' #a3e636',
+            borderWidth: 1,
+            barPercentage: 0.3, // Ancho de las barras
+            categoryPercentage: 1, // Espacio entre barras
+          },
+        ],
+      };
+
+
+
+
+
+
+
+        
 
 
 
@@ -512,14 +561,14 @@ export default function InformeAgr() {
 
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Seco</td>
-                                                <td className="border border-lime-200 px-1 py-2">387.1 m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">919.1 m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">{totaldesempalillado} m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero5(proyecciondesempalillado)} m³</td>   
                                             </tr>
 
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Total</td>
-                                                <td className="border border-lime-200 px-1 py-2 text-center">{formatoNumero(totalIngresoemp + 919.1)} m³</td>
-                                                <td className="border border-lime-200 px-1 py-2 text-center">{formatoNumero(totalVolumensemp /TOTAL * TOTAL_ + 387.1)} m³</td>
+                                                <td className="border border-lime-200 px-1 py-2 text-center">{formatoNumero(totalIngresoemp + totaldesempalillado)} m³</td>
+                                                <td className="border border-lime-200 px-1 py-2 text-center">{formatoNumero(totalVolumensemp /TOTAL * TOTAL_ + proyecciondesempalillado)} m³</td>
                                                
                                             </tr>
 
@@ -553,7 +602,7 @@ export default function InformeAgr() {
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Produccion</td>
                                                 <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco)} m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco  / 216 * 720)} m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">{formatoNumero(totalIngresoseco  / TOTALS * 720)} m³</td>   
                                             </tr>
                                         </tbody>
                                         </table>
