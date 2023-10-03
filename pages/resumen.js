@@ -21,37 +21,25 @@ export default function Resumen() {
 
    return (
         <Layout pagina='Resumen'>
-            <h1 className="text-4xl font-black text-center">Resumen</h1>
-            <p className="text-2xl my-10 text-center"></p>
+            <h1 className="text-2xl font-black text-center pb-4">Resumen</h1>
+
             
-
-
             {pedido.length === 0 ? (
                 <p className="text-center text-2xl">No hay Productos</p>
-                
-            ) : (
+                ) : (
                 pedido.map((equipo) => (
                 <ResumenSolicitud key={equipo.id} equipo={equipo} />
-                
                 ))
-                
             )}
 
-        
 
-            
-        <div className="text-center p-2">
-            <p className="text-lg font-bold">Total: {total}</p>
-        </div>
-
-        <form 
+            <form 
                 onSubmit={colocarOrden}
-                className="grid gap-4 grid-cols-2 md:grid-cols-2 2xl:grid-cols-2 text-center"
-                
+                className="grid gap-2 grid-cols-2 md:grid-cols-2 2xl:grid-cols-2 text-center"
             >
 
 
-        <div>
+                <div className="shadow rounded-lg p-1">
                     <label 
                         htmlFor="nombre"
                         className="block uppercase text-slate-800 font-bold text-lg text-center py-2">Calidad</label>
@@ -74,7 +62,7 @@ export default function Resumen() {
 
 
 
-                <div>
+                <div className="shadow rounded-lg p-1">
                     <label 
                         htmlFor="cliente"
                         className="block uppercase text-slate-800 font-bold text-lg text-center py-2">Cliente</label>
@@ -102,10 +90,28 @@ export default function Resumen() {
                 </div>
 
 
+                {/* <div className="shadow rounded-lg p-1">
+                    <label 
+                        htmlFor="cliente"
+                        className="block uppercase text-slate-800 font-bold text-lg text-center py-2">Turno</label>
+                    <select
+                        id="cliente"
+                        className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md"
+                        value={cliente}
+                        onChange={e => setCliente(e.target.value)}
+                    >
+                        <option value="">-</option>
+                        <option value="Mañana">Mañana</option>
+                        <option value="Tarde">Tarde</option>
+                    </select>
+                
+                </div> */}
+
+
 
                 
 
-        <div className="mt-6 w-full">
+                <div className="mt-6 w-full">
                     <input
                         type="submit"
                         className= {`${comprobarPedido() ? 'bg-indigo-100' : 'bg-indigo-600 hover:bg-indigo-800'} lg:w-auto px-5 py-2 rounded uppercase font-bold text-white text-center w-full`}
