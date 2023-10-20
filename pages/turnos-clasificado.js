@@ -77,9 +77,14 @@ const turnos = () => {
                         <td className="px-1 py-2 w-1/3 text-center border border-amber-400">59.8 m³</td>
                         <td className="px-1 py-2 w-1/3 text-center border border-amber-400">69.6 m³</td>    
                     </tr>
+                    <tr className='hover:bg-amber-300 text-sm'>
+                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">19-10-2023</td>
+                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">121.4 m³</td>
+                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">125.1 m³</td>    
+                    </tr>
                     <tr className='text-sm'>
                         <td className="px-1 py-2 w-1/3 text-center border border-amber-400 font-semibold">Total</td> 
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400 font-semibold" colSpan="2">2038.2 m³</td>    
+                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400 font-semibold" colSpan="2">2285.5 m³</td>    
                     </tr>
                 </tbody>
             </table>
