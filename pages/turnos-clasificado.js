@@ -118,7 +118,7 @@ const turnos = () => {
                         <td className="px-1 py-2 w-1/3 text-center border border-amber-400">35.8 m³</td>    
                     </tr>
                     <tr className='text-sm'>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400 font-semibold">Total</td> 
+                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400 font-semibold">Total.</td> 
                         <td className="px-1 py-2 w-1/3 text-center border border-amber-400 font-semibold" colSpan="2">3526.1 m³</td>    
                     </tr>
                 </tbody>
