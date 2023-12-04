@@ -121,6 +121,12 @@ export const SidebarAdmin = () => {
               </Link>
            </li>
            
+           <li>
+              <Link href="/listado-total-mes-anterior-noviembre" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
+                  📊
+                  <span class="ml-3">Noviembre</span>
+              </Link>
+           </li>
 
            <li>
               <Link href="/listado-total" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
