@@ -17,12 +17,13 @@ const StockTerminado = ({orden}) => {
           <tbody className="text-center">
             {pedido.map(oc => (
               <tr className="bg-white border-b hover:bg-lime-300 text-sm" key={oc.id}>
-                <td className="px-6 py-4 w-1/6 text-center border border-lime-400">{oc.espesor}</td>
-                <td className="px-6 py-4 w-1/6 text-center border border-lime-400">{oc.ancho}</td>
-                <td className="px-6 py-4 w-1/6 text-center border border-lime-400">{oc.largo}</td>
-                <td className="px-6 py-4 w-1/6 text-center border border-lime-400">{formatoNumero(oc.espesor * oc.ancho * oc.largo * oc.piezas *(oc.cantidad - cantidad) / 1000000 )}</td>
-                <td className="px-6 py-4 w-1/6 text-center border border-lime-400">{nombre}</td>
-                <td className="px-6 py-4 w-1/6 text-center border border-lime-400">{cliente}</td>
+                <td className="px-6 py-4 w-1/7 text-center border border-lime-400">{id}</td>
+                <td className="px-6 py-4 w-1/7 text-center border border-lime-400">{oc.espesor}</td>
+                <td className="px-6 py-4 w-1/7 text-center border border-lime-400">{oc.ancho}</td>
+                <td className="px-6 py-4 w-1/7 text-center border border-lime-400">{oc.largo}</td>
+                <td className="px-6 py-4 w-1/7 text-center border border-lime-400">{formatoNumero(oc.espesor * oc.ancho * oc.largo * oc.piezas *(oc.cantidad - cantidad) / 1000000 )}</td>
+                <td className="px-6 py-4 w-1/7 text-center border border-lime-400">{nombre}</td>
+                <td className="px-6 py-4 w-1/7 text-center border border-lime-400">{cliente}</td>
               </tr>
             ))}
           </tbody>
