@@ -15,6 +15,7 @@ export default function Home() {
 
   const [ datos, setDatos ] = useState([])
     const [ buscar, setBuscar ] = useState("")
+    
   
     //función para traer los datos de la API
     const URL = '/api/stock-despacho'
@@ -35,9 +36,9 @@ export default function Home() {
 
 
     const results = !buscar ? datos : datos.filter((dato) => {
-        const id = typeof dato.id === 'string' ? dato.id : String(dato.id);
-        return id.toLowerCase().includes(buscar.toLowerCase());
-      });
+      const id = typeof dato.id === 'string' ? dato.id : String(dato.id);
+      return id.toLowerCase().includes(buscar.toLowerCase());
+    });
       
       
 

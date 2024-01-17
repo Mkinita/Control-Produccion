@@ -88,12 +88,13 @@ export default function AdminProducciones() {
                 <tbody>
                         
                     <tr className="bg-white border-b  text-sm">
-                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Espesor</td>
-                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Ancho</td>
-                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Largo</td>
-                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Piezas</td>
-                        <td className="px-6 py-4 w-1/5 text-center border border-lime-400">Calidad</td>
-                        <td className="px-8 py-4 w-1/5 text-center border border-lime-400">m³</td>
+                    <td className="px-6 py-4 w-1/6 text-center border border-lime-400">Nº</td>
+                        <td className="px-6 py-4 w-1/6 text-center border border-lime-400">Espesor</td>
+                        <td className="px-6 py-4 w-1/6 text-center border border-lime-400">Ancho</td>
+                        <td className="px-6 py-4 w-1/6 text-center border border-lime-400">Largo</td>
+                        <td className="px-6 py-4 w-1/6 text-center border border-lime-400">Piezas</td>
+                        <td className="px-6 py-4 w-1/6 text-center border border-lime-400">Calidad</td>
+                        <td className="px-8 py-4 w-1/6 text-center border border-lime-400">m³</td>
                     </tr>
 
                 </tbody>
