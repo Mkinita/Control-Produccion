@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import axios from 'axios'
-import AdminLayout from "../layout/AdminLayout"
+import LayoutCalles from "../layout/LayoutCalles"
 import ListadoProduccion from '../components/ListadoProduccion'
 import Tabla from '@/components/Tabla'
 import StockCalles from '@/components/StockCalles'
@@ -75,7 +75,7 @@ export default function AdminProducciones() {
 
     
     return(
-        <AdminLayout pagina={'Listado-OC'}>
+        <LayoutCalles pagina={'Listado-OC'}>
 
             <h1 className="text-3xl font-black text-center">Calles Saldos</h1>
             {/* <p className='py-2 text-center'>Fecha: {new Date().toLocaleDateString('es-ES', { day: 'numeric', month: 'numeric', year: 'numeric' })}</p> */}
@@ -109,7 +109,7 @@ export default function AdminProducciones() {
 
 
             
-        </AdminLayout>
+        </LayoutCalles>
 
         
     )
