@@ -16,8 +16,8 @@ export default function AdminProducciones() {
 
     
 
-    const fetcher = () => axios('/api/listado-saldo-true').then(datos => datos.data)
-    const { data, error, isLoading } = useSWR('/api/listado-saldo-true',fetcher,{refreshInterval: 100} )
+    const fetcher = () => axios('/api/saldos-stock').then(datos => datos.data)
+    const { data, error, isLoading } = useSWR('/api/saldos-stock',fetcher,{refreshInterval: 100} )
 
 
 
@@ -26,7 +26,7 @@ export default function AdminProducciones() {
   const [pedido, setPedido] = useState([]);
     
   //función para traer los datos de la API
-  const URL = '/api/listado-saldo-true'
+  const URL = '/api/saldos-stock'
   
   const showData = async () => {
       const response = await fetch(URL)
