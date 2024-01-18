@@ -64,6 +64,7 @@ model Saldo {
   piezas String
   calidad String
   fecha DateTime
+  calle String?
   estado Boolean  @default(false)
 }
 

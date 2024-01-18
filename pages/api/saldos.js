@@ -43,6 +43,7 @@ export default async function handler(req, res) {
           largo: req.body.largo,
           piezas: req.body.piezas,
           calidad: req.body.calidad,
+          calle:req.body.calle,
           fecha: req.body.fecha,
         },
       });

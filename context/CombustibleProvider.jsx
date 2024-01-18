@@ -55,6 +55,7 @@ const CombustibleProvider = ({children}) => {
 
     const [horasmesseco, setHorasmesseco] = useState('')
     const [horastrabajadasseco, setHorastrabajadasseco] = useState('')
+    const [calle, setCalle] = useState('')
 
 
 
@@ -281,13 +282,14 @@ const CombustibleProvider = ({children}) => {
         e.preventDefault()
 
         try {
-           await axios.post('/api/saldos',{espesor,ancho,largo,piezas,calidad,fecha: new Date()})
+           await axios.post('/api/saldos',{espesor,ancho,largo,piezas,calidad,calle,fecha: new Date()})
             // Resetear la app
             setEspesor('')
             setAncho('')
             setLargo('')
             setPiezas('')
             setCalidad('')
+            setCalle('')
             toast.success('Agregando ⏳')
 
             setTimeout(() =>{
