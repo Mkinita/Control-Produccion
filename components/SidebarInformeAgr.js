@@ -8,6 +8,7 @@ export const SidebarAdmin = () => {
     const [isVisible2, setIsVisible2] = useState(false);
     const [isVisible3, setIsVisible3] = useState(false);
     const [isVisible4, setIsVisible4] = useState(false);
+    const [isVisible5, setIsVisible5] = useState(false);
         
     const toggleVisibility = () => {
         setIsVisible(!isVisible);
@@ -29,6 +30,10 @@ export const SidebarAdmin = () => {
 
     const toggleVisibility4 = () => {
         setIsVisible4(!isVisible4);
+    };
+
+    const toggleVisibility5 = () => {
+        setIsVisible5(!isVisible5);
     };
 
     const [currentMonth, setCurrentMonth] = useState('');
@@ -78,6 +83,25 @@ export const SidebarAdmin = () => {
             
                 {isVisible3 && (
             <div className="p-2 space-y-1">
+
+
+
+            <button
+            className="w-full flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase"
+            onClick={toggleVisibility5}
+                            
+            >
+               {isVisible5 ? '➖ 2023' : '📊 2023'}
+            </button>
+
+
+            <div className="">
+            
+                {isVisible5 && (
+            <div className="p-2 space-y-1">
+
+
+
 
             <li>
               <Link href="/listado-total-mes-anterior" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
@@ -134,6 +158,11 @@ export const SidebarAdmin = () => {
                   <span class="ml-3">Diciembre</span>
               </Link>
            </li>
+           </div>
+            
+            )}
+
+           </div>
 
            <li>
               <Link href="/listado-total-mes-anterior-enero-2024" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
@@ -141,6 +170,13 @@ export const SidebarAdmin = () => {
                   <span class="ml-3">Enero-2024</span>
               </Link>
            </li>
+           <li>
+              <Link href="/listado-total-mes-anterior-febrero-2024" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
+                  📊
+                  <span class="ml-3">Febrero-2024</span>
+              </Link>
+           </li>
+
            <li>
               <Link href="/listado-total" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
                   📊
