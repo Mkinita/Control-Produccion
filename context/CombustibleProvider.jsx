@@ -56,6 +56,7 @@ const CombustibleProvider = ({children}) => {
     const [horasmesseco, setHorasmesseco] = useState('')
     const [horastrabajadasseco, setHorastrabajadasseco] = useState('')
     const [calle, setCalle] = useState('')
+    const [operador, setOperador] = useState('')
 
 
 
@@ -256,13 +257,14 @@ const CombustibleProvider = ({children}) => {
         e.preventDefault()
 
         try {
-           await axios.post('/api/ordenes',{pedido,nombre,cantidad,cliente,fecha: new Date()})
+           await axios.post('/api/ordenes',{pedido,nombre,cantidad,cliente,operador,fecha: new Date()})
            await axios.post('/api/stock',{pedido,nombre,cantidad,cliente,fecha: new Date()})
             // Resetear la app
             setFaenaActual(faenas[0])
             setPedido([])
             setNombre('')
             setCalidad('')
+            setOperador('')
             toast.success('Agregando ⏳')
 
             setTimeout(() =>{
@@ -612,6 +614,7 @@ const CombustibleProvider = ({children}) => {
             detalle,setDetalle,
             espesor01,setEspesor01,
             fecha01,setFecha01,
+            operador,setOperador
             // pedidos,
             // fechas,
             // fechauno,

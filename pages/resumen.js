@@ -7,12 +7,12 @@ import ResumenSolicitud from "../components/ResumenSolicitud"
 
 export default function Resumen() {
 
-    const { pedido,total,nombre, setNombre,cliente,setCliente, colocarOrden,id } = useCombustible()
+    const { pedido,total,nombre, setNombre,cliente,setCliente, colocarOrden,id,operador,setOperador } = useCombustible()
 
     const comprobarPedido = useCallback(() => {
-        return pedido.length === 0 || nombre === "" || nombre.length <2 ;
+        return pedido.length === 0 || operador === "" || operador.length <5 ;
         
-    },[pedido, nombre])
+    },[pedido, operador])
 
 
     useEffect(() => {
@@ -35,90 +35,85 @@ export default function Resumen() {
 
             <form 
                 onSubmit={colocarOrden}
-                className="grid gap-2 grid-cols-2 md:grid-cols-2 2xl:grid-cols-2 text-center"
             >
 
+                <div className="grid gap-2 grid-cols-2 md:grid-cols-2 2xl:grid-cols-2 text-center"> 
 
-                <div className="shadow rounded-lg p-1">
-                    <label 
-                        htmlFor="nombre"
-                        className="block uppercase text-slate-800 font-bold text-lg text-center py-2">Calidad</label>
-                    <select
-                        id="nombre"
-                        className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md"
-                        value={nombre}
-                        onChange={e => setNombre(e.target.value)}
-                    >
-                        <option value="">-</option>
-                        <option value="COL">COL</option>
-                        <option value="REMA">REM</option>
-                        <option value="IND">IND</option>
-                        <option value="SERVICIO">SRV</option>
-                        <option value="BS">B-S</option>
-                        <option value="CEPILLADO">CEPILLADO</option>
-                    </select>
-                
+
+                    <div className="shadow rounded-lg p-1">
+                        <label 
+                            htmlFor="nombre"
+                            className="block uppercase text-slate-800 font-bold text-lg text-center py-2">Calidad</label>
+                        <select
+                            id="nombre"
+                            className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md"
+                            value={nombre}
+                            onChange={e => setNombre(e.target.value)}
+                        >
+                            <option value="">-</option>
+                            <option value="COL">COL</option>
+                            <option value="REMA">REM</option>
+                            <option value="IND">IND</option>
+                            <option value="SERVICIO">SRV</option>
+                            <option value="BS">B-S</option>
+                            <option value="CEPILLADO">CEPILLADO</option>
+                        </select>
+                    
+                    </div>
+
+
+
+                    <div className="shadow rounded-lg p-1">
+                        <label 
+                            htmlFor="cliente"
+                            className="block uppercase text-slate-800 font-bold text-lg text-center py-2">Cliente</label>
+                        <select
+                            id="cliente"
+                            className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md"
+                            value={cliente}
+                            onChange={e => setCliente(e.target.value)}
+                        >
+                            <option value="">-</option>
+                            <option value="Davidson">Davidson</option>
+                            <option value="Masisa">Masisa</option>
+                            <option value="Ferramenta">Ferramenta</option>
+                            <option value="Ochoco">Ochoco</option>
+                            <option value="Agrifor">Agrifor</option>
+                            <option value="S/C">S/C</option>
+                            <option value="Lv">Lv</option>
+                            <option value="B&C">B&C</option>
+                            <option value="Camelio">Camelio</option>
+                            <option value="Seivb">Seivb</option>
+                            <option value="Laminas">Laminas</option>
+                            <option value="Sonamu">Sonamu</option>
+                        </select>
+                    
+                    </div>
+
                 </div>
 
 
 
-                <div className="shadow rounded-lg p-1">
-                    <label 
-                        htmlFor="cliente"
-                        className="block uppercase text-slate-800 font-bold text-lg text-center py-2">Cliente</label>
-                    <select
-                        id="cliente"
-                        className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md"
-                        value={cliente}
-                        onChange={e => setCliente(e.target.value)}
-                    >
-                        <option value="">-</option>
-                        <option value="Davidson">Davidson</option>
-                        <option value="Masisa">Masisa</option>
-                        <option value="Ferramenta">Ferramenta</option>
-                        <option value="Ochoco">Ochoco</option>
-                        <option value="Agrifor">Agrifor</option>
-                        <option value="S/C">S/C</option>
-                        <option value="Lv">Lv</option>
-                        <option value="B&C">B&C</option>
-                        <option value="Camelio">Camelio</option>
-                        <option value="Seivb">Seivb</option>
-                        <option value="Laminas">Laminas</option>
-                        <option value="Sonamu">Sonamu</option>
-                    </select>
-                
-                </div>
+                <div className="grid grid-cols-1 gap-2 m-auto text-center py-4 pb-0"> 
+                    <div className="shadow rounded-lg p-1">
+                        <label for="operador" class="block uppercase text-slate-800 font-bold text-lg text-center py-2">Operador</label>    
+                        <input
+                            id="operador"
+                            type="text"
+                            className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md"
+                            value={operador}
+                            onChange={e => setOperador(e.target.value)}
+                        />
+                    </div>
 
-
-                {/* <div className="shadow rounded-lg p-1">
-                    <label 
-                        htmlFor="cliente"
-                        className="block uppercase text-slate-800 font-bold text-lg text-center py-2">Turno</label>
-                    <select
-                        id="cliente"
-                        className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md"
-                        value={cliente}
-                        onChange={e => setCliente(e.target.value)}
-                    >
-                        <option value="">-</option>
-                        <option value="Mañana">Mañana</option>
-                        <option value="Tarde">Tarde</option>
-                    </select>
-                
-                </div> */}
-
-
-
-                
-
-                <div className="mt-6 w-full">
-                    <input
-                        type="submit"
-                        className= {`${comprobarPedido() ? 'bg-indigo-100' : 'bg-indigo-600 hover:bg-indigo-800'} lg:w-auto px-5 py-2 rounded uppercase font-bold text-white text-center w-full`}
-                        value="Ingresar"
-                        disabled={comprobarPedido()}
-                        
-                    />
+                    <div className="mt-6 w-full">
+                        <input
+                            type="submit"
+                            className= {`${comprobarPedido() ? 'bg-indigo-100' : 'bg-indigo-600 hover:bg-indigo-800'} lg:w-auto px-5 py-2 rounded uppercase font-bold text-white text-center w-full`}
+                            value="Ingresar"
+                            disabled={comprobarPedido()}
+                        />
+                    </div>
                 </div>
 
                 </form>

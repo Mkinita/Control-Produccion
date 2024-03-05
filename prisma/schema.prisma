@@ -36,6 +36,7 @@ model Orden {
   fecha DateTime
   cantidad String?
   pedido Json
+  operador String
   estado Boolean  @default(false)
   finalizado Boolean  @default(false)
   cliente String?

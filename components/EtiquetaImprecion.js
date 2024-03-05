@@ -12,7 +12,7 @@ const Etiquetas = ({orden}) => {
 
 
 
-    const {nombre,id,pedido,cliente,fecha} = orden;
+    const {nombre,id,pedido,cliente,fecha,operador} = orden;
 
     const router = useRouter()
 
@@ -46,6 +46,7 @@ const Etiquetas = ({orden}) => {
                   <p className='text-sm font-bold'>{nombre}</p>
                   <p className='text-sm font-bold'></p>
                   <p className='text-sm font-bold'>{formatiarFecha(fecha)}</p>
+                  <p className='text-sm font-bold'>{operador}</p>
                   <div className='py-1'>
       <QRGenerator orden={('https://control-produccion-production.up.railway.app/etiqueta/')+ ('/')+(id)} />
       <p className='text-sm font-bold py-1'>N°: {id}</p>
