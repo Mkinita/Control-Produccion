@@ -11,52 +11,29 @@ const turnos = () => {
                 <tbody>
                     <tr className="bg-white border-b text-lg font-semibold">
                         <td className="px-6 py-4 w-1/3 text-center border border-amber-400">Fecha</td> 
+                        <td className="px-6 py-4 w-1/3 text-center border border-amber-400">Muñoz</td>
                         <td className="px-6 py-4 w-1/3 text-center border border-amber-400">Camacho</td>
-                        <td className="px-6 py-4 w-1/3 text-center border border-amber-400">Pedro</td>
                     </tr>
                     <tr className='hover:bg-amber-300 text-sm'>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">01-02-2024 / 09-02-2024</td>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400" colSpan="2">959.0 m³</td>   
+                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">01-03-2024 / 21-03-2024</td>
+                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400" colSpan="2">2395.0 m³</td>   
                     </tr>
                     <tr className='hover:bg-amber-300 text-sm'>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">12-02-2024</td>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">72.1 m³</td>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">116.0 m³</td>    
+                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">22-03-2024</td>
+                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">182.0 m³</td>
+                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">122.0 m³</td>    
                     </tr>
 
-                    <tr className='hover:bg-amber-300 text-sm'>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">13-02-2024</td>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">163.0 m³</td>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">189.0 m³</td>    
-                    </tr>
-
-                    <tr className='hover:bg-amber-300 text-sm'>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">14-02-2024</td>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">125.0 m³</td>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">115.0 m³</td>    
-                    </tr>
-
-                    <tr className='hover:bg-amber-300 text-sm'>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">15-02-2024</td>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">186.0 m³</td>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">110.0 m³</td>    
-                    </tr>
-
-                    <tr className='hover:bg-amber-300 text-sm'>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">16-02-2024</td>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">165.0 m³</td>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">181.0 m³</td>    
-                    </tr>
 
                     <tr className='hover:bg-amber-300 text-sm'>
                         <td className="px-1 py-2 w-1/3 text-center border border-amber-400">Total Turnos</td>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400"> m³</td>
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400"> m³</td>    
+                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">2577.0 m³</td>
+                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400">2517.0 m³</td>    
                     </tr>
                    
                     <tr className='text-sm'>
                         <td className="px-1 py-2 w-1/3 text-center border border-amber-400 font-semibold">Total</td> 
-                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400 font-semibold" colSpan="2">2381.0 m³</td>    
+                        <td className="px-1 py-2 w-1/3 text-center border border-amber-400 font-semibold" colSpan="2">2699.0 m³</td>    
                     </tr>
                 </tbody>
             </table>
