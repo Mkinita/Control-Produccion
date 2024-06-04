@@ -30,7 +30,7 @@ export default function InformeAgr() {
                 
                 <div className="bg-gray-200 p-4 rounded-lg shadow-lg">
                     <div className="flex items-center justify-between mb-4">
-                        <h2 className="text-lg font-semibold">Indicadores Mayo 2024</h2>
+                        <h2 className="text-lg font-semibold">Indicadores Abril 2024</h2>
                         <div className="flex space-x-4">
                         <div className="flex items-center">
                             <span className="bg-green-500 rounded-full w-4 h-4 mr-2"></span>
@@ -110,13 +110,13 @@ export default function InformeAgr() {
                                             </tr>
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Ingreso</td>
-                                                <td className="border border-lime-200 px-1 py-2">6400 m³</td> 
-                                                <td className="border border-lime-200 px-1 py-2">6400 m³</td>  
+                                                <td className="border border-lime-200 px-1 py-2">7207 m³</td> 
+                                                <td className="border border-lime-200 px-1 py-2">7207 m³</td>  
                                             </tr>
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Produccion</td>
-                                                <td className="border border-lime-200 px-1 py-2">2650 m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">2650 m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">3354 m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">3354 m³</td>   
                                             </tr>
                                         </tbody>
                                         </table>
@@ -176,21 +176,21 @@ export default function InformeAgr() {
                                             
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Verde</td>
-                                                <td className="border border-lime-200 px-1 py-2">3567 m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">3567 m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">3628 m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">3628 m³</td>   
                                             </tr>
                                             
 
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Seco</td>
-                                                <td className="border border-lime-200 px-1 py-2">584 m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">584 m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">849 m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">849 m³</td>   
                                             </tr>
 
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Total</td>
-                                                <td className="border border-lime-200 px-1 py-2 text-center">4151 m³</td>
-                                                <td className="border border-lime-200 px-1 py-2 text-center">4151 m³</td>
+                                                <td className="border border-lime-200 px-1 py-2 text-center">4477 m³</td>
+                                                <td className="border border-lime-200 px-1 py-2 text-center">4477 m³</td>
                                                
                                             </tr>
 
@@ -220,8 +220,8 @@ export default function InformeAgr() {
                                             
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Produccion</td>
-                                                <td className="border border-lime-200 px-1 py-2">3589 m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">3589 m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">2383 m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">2383 m³</td>   
                                             </tr>
                                         </tbody>
                                         </table>
@@ -259,13 +259,13 @@ export default function InformeAgr() {
                                             </tr>
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Ingreso</td>
-                                                <td className="border border-lime-200 px-1 py-2">3667 m³</td>
-                                                <td className="border border-lime-200 px-1 py-2">3667 m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">2246 m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">2246 m³</td>   
                                             </tr>
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Produccion</td>
-                                                <td className="border border-lime-200 px-1 py-2">3567 m³</td> 
-                                                <td className="border border-lime-200 px-1 py-2">3567 m³</td>  
+                                                <td className="border border-lime-200 px-1 py-2">2172 m³</td> 
+                                                <td className="border border-lime-200 px-1 py-2">2172 m³</td>  
                                             </tr>
                                         </tbody>
                                         </table>
@@ -309,15 +309,17 @@ export default function InformeAgr() {
                                             
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Real</td>
-                                                <td className="border border-lime-200 px-1 py-2">- m³	</td> 
-                                                <td className="border border-lime-200 px-1 py-2">- m³	</td> 
-                                                <td className="border border-lime-200 px-1 py-2">4046 m³</td>  
+                                                <td className="border border-lime-200 px-1 py-2">2331 m³	</td> 
+                                                <td className="border border-lime-200 px-1 py-2">36.1 m</td>
+                                                <td className="border border-lime-200 px-1 py-2">424 m³</td>
+                                                <td className="border border-lime-200 px-1 py-2">2792 m³</td>  
                                             </tr>
                                             <tr>
                                                 <td className="border border-lime-200 px-1 py-2">Proyeccion</td>
-                                                <td className="border border-lime-200 px-1 py-2">- m³	</td>
-                                                <td className="border border-lime-200 px-1 py-2">- m³	</td>  
-                                                <td className="border border-lime-200 px-1 py-2">4046 m³</td>   
+                                                <td className="border border-lime-200 px-1 py-2">2331 m³	</td>
+                                                <td className="border border-lime-200 px-1 py-2">36.1 m</td> 
+                                                <td className="border border-lime-200 px-1 py-2">424 m³</td> 
+                                                <td className="border border-lime-200 px-1 py-2">2792 m³</td>   
                                             </tr>
 
                                             
