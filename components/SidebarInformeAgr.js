@@ -191,9 +191,16 @@ export const SidebarAdmin = () => {
            </li>
 
            <li>
-              <Link href="/listado-total-mes-anterior-abril-2024" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
+              <Link href="/listado-total-mes-anterior-abrilcd-2024" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
                   📊
                   <span class="ml-3">Mayo-2024</span>
+              </Link>
+           </li>
+
+           <li>
+              <Link href="/listado-total-mes-anterior-junio-2024" class="flex items-center p-2 text-xs font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase">
+                  📊
+                  <span class="ml-3">Junio-2024</span>
               </Link>
            </li>
 
