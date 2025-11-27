@@ -75,8 +75,8 @@ export default function Resumen() {
                             onChange={e => setCliente(e.target.value)}
                         >
                             <option value="">-</option>
-                            <option value="Sonamu">Sonamu</option>
-                            <option value="RCM MODULAR">COLLAQUI</option>
+                            <option value="RCM MODULAR">RCM MODULAR</option>
+                            <option value="COLLAQUI">COLLAQUI</option>
                             <option value="Davidson">Davidson</option>
                             <option value="Masisa">Masisa</option>
                             <option value="Ferramenta">Ferramenta</option>
