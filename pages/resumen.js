@@ -52,6 +52,7 @@ export default function Resumen() {
                         >
                             <option value="">-</option>
                             <option value="COL">COL</option>
+                            <option value="COL MIX">COL MIX</option>    
                             <option value="COL B">COL B</option>
                             <option value="REMA">REM</option>
                             <option value="IND">IND</option>
