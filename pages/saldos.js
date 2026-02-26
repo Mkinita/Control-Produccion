@@ -141,6 +141,13 @@ export default function Saldo() {
                                         <option value="Clear">Clear</option>
                                         <option value="Servicio">Servicio</option>
                                         <option value="Canteo">Canteo</option>
+                                        <option value="REP A ANGOSTO"> REP A ANGOSTO</option>
+                                        <option value="REP A ANCHO"> REP A ANCHO</option>
+                                        <option value="REP B ANGOSTO"> REP B ANGOSTO</option>
+                                        <option value="REP B ANCHO"> REP A ANCHO</option>
+                                            
+
+            
                                     </select>
                                 </div>
                             <div>
