@@ -145,6 +145,8 @@ export default function Saldo() {
                                         <option value="REP A ANCHO"> REP A ANCHO</option>
                                         <option value="REP B ANGOSTO"> REP B ANGOSTO</option>
                                         <option value="REP B ANCHO"> REP A ANCHO</option>
+                                        <option value="LAT X CLASF ANCHO">LAT X CLASF ANCHO</option>
+                                        <option value="LAT X CLASF ANG">LAT X CLASF ANG</option>
                                             
 
             
