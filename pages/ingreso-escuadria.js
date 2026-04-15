@@ -118,6 +118,7 @@ export default function Saldo() {
                                         <option value="3.66">12</option>
                                         <option value="3.96">13</option>
                                         <option value="4.00">4</option>
+                                        <option value="4.88">4.88</option>
                                     </select>
                                 </div> 
 
