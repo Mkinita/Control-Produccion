@@ -31,12 +31,12 @@ const Encabezado = () => {
             </div>
             <div class="p-2 font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase w-full">
             <Link href="/listado-empalillado">
-                <span class="">Stacker</span>
+                <span class="">Stacker AM</span>
             </Link>
             </div>
             <div class="p-2 font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase w-full">
             <Link href="/listado-secado">
-                <span class="">Secado</span>
+                <span class="">Stacker PM</span>
             </Link>
             </div>
             <div class="p-2 font-black text-black rounded-lg bg-lime-400 dark:text-black hover:bg-gray-100 dark:hover:bg-lime-500 uppercase w-full">
