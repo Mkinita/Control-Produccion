@@ -88,7 +88,7 @@ export default function Pedido() {
                                     <option value="ASERRADERO">ASERRADERO</option>
                                     <option value="CLASIFICADO">CLASIFICADO</option>
                                     <option value="STAKER">STAKER AM</option>
-                                    <option value="SECADO">STAKER PM</option>
+                                    <option value="SECO">STAKER PM</option>
                                     </select>
                                 </div>
                                 <div>
