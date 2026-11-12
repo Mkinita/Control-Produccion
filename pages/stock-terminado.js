@@ -14,7 +14,7 @@ export default function AdminProducciones() {
   const [search, setSearch] = useState('')
 
   // Obtener información de la API
-  const fetcher = (url: string) =>
+  const fetcher = (url) =>
     axios.get(url).then(res => res.data)
 
   const {
@@ -32,7 +32,7 @@ export default function AdminProducciones() {
 
     if (!search.trim()) return users
 
-    return users.filter((orden: any) =>
+    return users.filter((orden) =>
       JSON.stringify(orden)
         .toLowerCase()
         .includes(search.toLowerCase())
@@ -43,13 +43,13 @@ export default function AdminProducciones() {
   // Preparar registros y calcular volumen
   const detalles = useMemo(() => {
 
-    return results.flatMap((orden: any) => {
+    return results.flatMap((orden) => {
 
       const pedidos = Array.isArray(orden.pedido)
         ? orden.pedido
         : []
 
-      return pedidos.map((oc: any) => {
+      return pedidos.map((oc) => {
 
         const espesor = Number(oc.espesor || 0)
         const ancho = Number(oc.ancho || 0)
@@ -82,15 +82,15 @@ export default function AdminProducciones() {
 
   }, [results])
 
-  // Resumen
+  // Resumen automático
   const totalVolumen = detalles.reduce(
-    (total: number, item: any) =>
-      total + item.volumen, 0
+    (total, item) => total + item.volumen,
+    0
   )
 
   const totalCantidad = detalles.reduce(
-    (total: number, item: any) =>
-      total + item.cantidad, 0
+    (total, item) => total + item.cantidad,
+    0
   )
 
   // Descargar Excel
@@ -101,7 +101,7 @@ export default function AdminProducciones() {
       return
     }
 
-    const filasExcel = detalles.map((item: any) => ({
+    const filasExcel = detalles.map((item) => ({
       'N°': item.numero,
       'Espesor': item.espesor,
       'Ancho': item.ancho,
@@ -112,7 +112,7 @@ export default function AdminProducciones() {
       'Cliente': item.cliente
     }))
 
-    // Crear hoja
+    // Crear hoja Excel
     const hoja = XLSX.utils.json_to_sheet(filasExcel)
 
     // Ancho de columnas
@@ -169,7 +169,6 @@ export default function AdminProducciones() {
           Stock Terminado
         </h1>
 
-
         {/* RESUMEN */}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
@@ -186,7 +185,6 @@ export default function AdminProducciones() {
 
           </div>
 
-
           <div className="bg-white border border-lime-400 rounded-xl p-5 shadow-sm">
 
             <p className="text-sm font-bold text-gray-500">
@@ -201,7 +199,6 @@ export default function AdminProducciones() {
 
         </div>
 
-
         {/* BUSCADOR Y EXCEL */}
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-5">
@@ -214,7 +211,6 @@ export default function AdminProducciones() {
             className="w-full md:w-2/3 border border-gray-300 rounded-lg px-4 py-3 text-gray-700 outline-none focus:border-lime-500 focus:ring-2 focus:ring-lime-100"
           />
 
-
           <button
             onClick={descargarExcel}
             disabled={!detalles.length}
@@ -224,7 +220,6 @@ export default function AdminProducciones() {
           </button>
 
         </div>
-
 
         {/* TABLA */}
 
@@ -244,9 +239,7 @@ export default function AdminProducciones() {
                 <col className="w-[19%]" />
               </colgroup>
 
-
               <TablaTerminado />
-
 
               <tbody>
 
@@ -268,7 +261,7 @@ export default function AdminProducciones() {
 
                 ) : results.length > 0 ? (
 
-                  results.map((orden: any) => (
+                  results.map((orden) => (
 
                     <StockTerminado
                       key={orden.id}
@@ -294,7 +287,6 @@ export default function AdminProducciones() {
           </div>
 
         </div>
-
 
         {/* PIE DE TABLA */}
 
