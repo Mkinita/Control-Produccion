@@ -13,10 +13,8 @@ const StockTerminado = ({ orden }) => {
   } = orden
 
   return (
-
     <>
-
-      {pedido.map((oc) => {
+      {pedido.map((oc, index) => {
 
         const volumen =
           Number(oc.espesor || 0) *
@@ -29,12 +27,10 @@ const StockTerminado = ({ orden }) => {
           ) / 1000000
 
         return (
-
           <tr
-            key={`${id}-${oc.id}`}
+            key={`${id}-${oc.id || index}`}
             className="bg-white hover:bg-lime-100 text-sm transition-colors"
           >
-
             <td className="px-4 py-3 text-center border border-lime-400">
               {id}
             </td>
@@ -62,17 +58,11 @@ const StockTerminado = ({ orden }) => {
             <td className="px-4 py-3 text-center border border-lime-400">
               {cliente}
             </td>
-
           </tr>
-
         )
-
       })}
-
     </>
-
   )
-
 }
 
 export default StockTerminado
