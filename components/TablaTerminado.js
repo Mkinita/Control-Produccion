@@ -1,33 +1,48 @@
-const TablaTerminado = ({orden}) => {
-    
-    return (
-      
-      <>
-      
-      
 
-              <div class="overflow-x-auto">
-  <table class="table-auto w-full border-collapse">
-    <thead>
-      <tr className="">
-        <th class="px-6 py-4 w-1/7 text-center border border-lime-400">Nº</th>
-        <th class="px-6 py-4 w-1/7 text-center border border-lime-400">Espesor</th>
-        <th class="px-6 py-4 w-1/7 text-center border border-lime-400">Ancho</th>
-        <th class="px-6 py-4 w-1/7 text-center border border-lime-400">largo</th>
-        <th class="px-6 py-4 w-1/7 text-center border border-lime-400">m³</th>
-        <th class="px-6 py-4 w-1/7 text-center border border-lime-400">Calidad</th>
-        <th class="px-6 py-4 w-1/7 text-center border border-lime-400">Cliente</th>
+import React from 'react'
+
+const TablaTerminado = () => {
+
+  return (
+
+    <thead className="bg-gray-100 text-gray-800">
+
+      <tr>
+
+        <th className="px-4 py-4 text-center border border-lime-400 font-black">
+          Nº
+        </th>
+
+        <th className="px-4 py-4 text-center border border-lime-400 font-black">
+          Espesor
+        </th>
+
+        <th className="px-4 py-4 text-center border border-lime-400 font-black">
+          Ancho
+        </th>
+
+        <th className="px-4 py-4 text-center border border-lime-400 font-black">
+          Largo
+        </th>
+
+        <th className="px-4 py-4 text-center border border-lime-400 font-black">
+          m³
+        </th>
+
+        <th className="px-4 py-4 text-center border border-lime-400 font-black">
+          Calidad
+        </th>
+
+        <th className="px-4 py-4 text-center border border-lime-400 font-black">
+          Cliente
+        </th>
+
       </tr>
+
     </thead>
-          </table>
-          </div>
 
+  )
 
-          
-  
-      </>
-    )
-  }
-  
-  export default TablaTerminado
-  
+}
+
+export default TablaTerminado
